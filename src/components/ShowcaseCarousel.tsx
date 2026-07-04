@@ -148,7 +148,7 @@ export default function ShowcaseCarousel() {
   const currentItem = items[currentIndex];
 
   return (
-    <section id="gallery" className="pt-8 pb-16 relative overflow-hidden bg-slate-50">
+    <section id="gallery" className="pt-8 pb-16 relative overflow-hidden bg-brand-deep">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-teal/5 rounded-full blur-[130px] pointer-events-none"></div>
 
@@ -158,11 +158,11 @@ export default function ShowcaseCarousel() {
           <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
             State-of-the-Art Showcase
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-4 uppercase">
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-4 uppercase">
             System & Project <span className="text-yellow-500">Gallery</span>
           </h2>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-          <p className="mt-4 text-sm text-slate-600 font-medium">
+          <p className="mt-4 text-sm text-slate-300 font-medium">
             Browse our full range of high-purity water generation skids, distribution loops, and automation interfaces. Slides auto-rotate every 3 seconds.
           </p>
         </div>
@@ -170,10 +170,10 @@ export default function ShowcaseCarousel() {
         {/* Carousel Container */}
         <div className="relative max-w-6xl mx-auto">
           {/* Main Card */}
-          <div className="min-h-[600px] lg:min-h-[480px] rounded-3xl overflow-hidden glass-panel border border-slate-200/80 shadow-2xl relative flex flex-col lg:flex-row w-full transition-all duration-300">
+          <div className="min-h-[600px] lg:min-h-[480px] rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative flex flex-col lg:flex-row w-full transition-all duration-300">
             
             {/* Image Panel with AnimatePresence */}
-            <div className="relative lg:w-1/2 aspect-[4/3] sm:aspect-video lg:aspect-auto min-h-[280px] lg:min-h-full bg-slate-50 overflow-hidden">
+            <div className="relative lg:w-1/2 aspect-[4/3] sm:aspect-video lg:aspect-auto min-h-[280px] lg:min-h-full bg-brand-deep overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentItem.id}
@@ -191,10 +191,10 @@ export default function ShowcaseCarousel() {
                     sizes="(max-w-1024px) 100vw, 50vw"
                     className="object-contain p-2 sm:p-4 lg:p-6 group-hover:scale-[1.02] transition-transform duration-750"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-50/20 via-transparent to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brand-deep/20 via-transparent to-transparent pointer-events-none"></div>
                   
                   {/* Category Badge */}
-                  <span className="absolute top-6 left-6 bg-white/95 border border-slate-200 text-brand-cyan text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg shadow-sm">
+                  <span className="absolute top-6 left-6 bg-brand-dark/95 border border-white/5 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg shadow-sm">
                     {currentItem.category}
                   </span>
                 </motion.div>
@@ -202,7 +202,7 @@ export default function ShowcaseCarousel() {
             </div>
 
             {/* Content Panel with AnimatePresence */}
-            <div className="p-5 sm:p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between relative bg-white lg:border-l border-slate-200/60">
+            <div className="p-5 sm:p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between relative bg-brand-dark lg:border-l border-white/5">
               
               <AnimatePresence mode="wait">
                 <motion.div
@@ -215,7 +215,7 @@ export default function ShowcaseCarousel() {
                 >
                   {/* Header */}
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                       {currentItem.title}
                     </h3>
                     <span className="text-xs font-semibold text-brand-cyan block mt-1 tracking-wider">
@@ -226,14 +226,14 @@ export default function ShowcaseCarousel() {
                   <div className="w-12 h-0.5 bg-brand-cyan rounded-full"></div>
 
                   {/* Description */}
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed">
                     {currentItem.description}
                   </p>
 
                   {/* Features Checklist */}
                   <ul className="space-y-3">
                     {currentItem.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-xs text-slate-600">
+                      <li key={idx} className="flex items-start text-xs text-slate-300">
                         <span className="flex-shrink-0 w-4 h-4 rounded-md bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center mr-3 mt-0.5">
                           <Check className="w-3 h-3 text-brand-cyan" />
                         </span>
@@ -243,11 +243,11 @@ export default function ShowcaseCarousel() {
                   </ul>
 
                   {/* Specifications Footer */}
-                  <div className="pt-6 border-t border-slate-100 flex flex-wrap gap-2">
+                  <div className="pt-6 border-t border-white/5 flex flex-wrap gap-2">
                     {currentItem.specs.map((spec, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] sm:text-xs font-bold tracking-wider text-slate-700 bg-slate-50 border border-slate-200/80 px-3 py-1 rounded-md uppercase"
+                        className="text-[10px] sm:text-xs font-bold tracking-wider text-slate-300 bg-brand-deep border border-white/10 px-3 py-1 rounded-md uppercase"
                       >
                         {spec}
                       </span>
@@ -257,17 +257,17 @@ export default function ShowcaseCarousel() {
               </AnimatePresence>
 
               {/* Progress Bar & Controls */}
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
                 {/* Play/Pause indicator */}
                 <button
                   onClick={() => setIsPlaying(!isPlaying)}
-                  className="p-2 rounded-lg text-slate-500 hover:text-brand-cyan hover:bg-slate-50 transition-all focus:outline-none"
+                  className="p-2 rounded-lg text-slate-400 hover:text-brand-cyan hover:bg-white/5 transition-all focus:outline-none"
                   aria-label={isPlaying ? "Pause autoplay" : "Start autoplay"}
                 >
                   {isPlaying ? (
                     <Pause className="w-4 h-4 text-brand-cyan animate-pulse" />
                   ) : (
-                    <Play className="w-4 h-4 text-slate-500" />
+                    <Play className="w-4 h-4 text-slate-400" />
                   )}
                 </button>
 
@@ -275,7 +275,7 @@ export default function ShowcaseCarousel() {
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={handlePrev}
-                    className="p-1.5 rounded-lg text-slate-500 hover:text-brand-cyan hover:bg-slate-50 lg:hidden"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-brand-cyan hover:bg-white/5 lg:hidden"
                     aria-label="Previous slide"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -288,7 +288,7 @@ export default function ShowcaseCarousel() {
                         key={idx}
                         onClick={() => setCurrentIndex(idx)}
                         className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          currentIndex === idx ? "bg-brand-cyan w-4" : "bg-slate-200 hover:bg-slate-300"
+                          currentIndex === idx ? "bg-brand-cyan w-4" : "bg-slate-700 hover:bg-slate-600"
                         }`}
                         aria-label={`Go to slide ${idx + 1}`}
                       ></button>
@@ -297,7 +297,7 @@ export default function ShowcaseCarousel() {
 
                   <button
                     onClick={handleNext}
-                    className="p-1.5 rounded-lg text-slate-500 hover:text-brand-cyan hover:bg-slate-50 lg:hidden"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-brand-cyan hover:bg-white/5 lg:hidden"
                     aria-label="Next slide"
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -305,7 +305,7 @@ export default function ShowcaseCarousel() {
                 </div>
 
                 {/* Slide index */}
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
                   {currentIndex + 1} / {items.length}
                 </span>
               </div>
@@ -315,7 +315,7 @@ export default function ShowcaseCarousel() {
           {/* Left Arrow Button (Desktop Only) */}
           <button
             onClick={handlePrev}
-            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 lg:-left-16 p-3 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-brand-cyan hover:border-brand-cyan/60 hover:bg-slate-50 shadow-md transition-all focus:outline-none active:scale-90"
+            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 lg:-left-16 p-3 rounded-full bg-brand-dark border border-white/5 text-slate-300 hover:text-white hover:border-brand-cyan/60 hover:bg-brand-dark/80 shadow-md transition-all focus:outline-none active:scale-90"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -324,7 +324,7 @@ export default function ShowcaseCarousel() {
           {/* Right Arrow Button (Desktop Only) */}
           <button
             onClick={handleNext}
-            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 lg:-right-16 p-3 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-brand-cyan hover:border-brand-cyan/60 hover:bg-slate-50 shadow-md transition-all focus:outline-none active:scale-90"
+            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 lg:-right-16 p-3 rounded-full bg-brand-dark border border-white/5 text-slate-300 hover:text-white hover:border-brand-cyan/60 hover:bg-brand-dark/80 shadow-md transition-all focus:outline-none active:scale-90"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

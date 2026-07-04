@@ -35,7 +35,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/60 py-4 shadow-md shadow-slate-100/50"
+          ? "bg-brand-deep/90 backdrop-blur-md border-b border-white/5 py-4 shadow-lg shadow-black/20"
           : "bg-transparent py-6"
       }`}
     >
@@ -61,7 +61,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs font-semibold text-slate-700 hover:text-brand-cyan transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-cyan after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300"
+                className="text-xs font-semibold text-slate-300 hover:text-white transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-cyan after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300"
               >
                 {link.name}
               </Link>
@@ -71,7 +71,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors focus:outline-none"
+            className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -85,7 +85,7 @@ export default function Header() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-slate-200 transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`md:hidden fixed inset-x-0 top-[72px] bg-brand-deep/95 backdrop-blur-lg border-b border-white/5 transition-all duration-300 ease-in-out overflow-hidden ${
           isMobileMenuOpen ? "max-h-[400px] opacity-100 py-6" : "max-h-0 opacity-0 py-0"
         }`}
       >
@@ -95,7 +95,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-base font-semibold text-slate-700 hover:text-brand-cyan hover:bg-slate-50 px-3 py-2 rounded-lg transition-all"
+              className="block text-base font-semibold text-slate-300 hover:text-white hover:bg-white/5 px-3 py-2 rounded-lg transition-all"
             >
               {link.name}
             </Link>

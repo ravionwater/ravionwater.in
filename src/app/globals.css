@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-deep: #F8FAFC;       /* Clean light slate */
-  --color-brand-dark: #FFFFFF;       /* Pure white for cards */
-  --color-brand-blue: #E2E8F0;       /* Light slate border */
-  --color-brand-medium: #475569;     /* Subheadings (slate-600) */
-  --color-brand-light: #334155;      /* Paragraph text (slate-700) */
-  --color-brand-cyan: #0B3D91;       /* Brand dark blue accent */
-  --color-brand-teal: #0284C7;       /* Teal/blue secondary accent */
-  --color-brand-accent: #0F172A;     /* Dark slate headings */
-  --color-brand-sky: #0369A1;        /* Readable sky blue */
-  --color-brand-water: #F1F5F9;      /* Light overlay */
+  --color-brand-deep: #0B1329;       /* Corporate dark navy background */
+  --color-brand-dark: #121D3A;       /* Deep slate-blue for cards */
+  --color-brand-blue: #1A233D;       /* Dark border style */
+  --color-brand-medium: #94A3B8;     /* Subheadings (slate-400) */
+  --color-brand-light: #CBD5E1;      /* Paragraph text (slate-300) */
+  --color-brand-cyan: #38BDF8;       /* Bright cyan accent */
+  --color-brand-teal: #0EA5E9;       /* Sky-500 secondary accent */
+  --color-brand-accent: #FFFFFF;     /* White headings */
+  --color-brand-sky: #7DD3FC;        /* Readable light sky blue */
+  --color-brand-water: #1E293B;      /* Dark slate overlay */
   
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   --animate-fade-in-down: fade-in-down 0.8s ease-out forwards;
@@ -76,40 +76,40 @@ html {
 }
 
 body {
-  background-color: #F8FAFC;
+  background-color: #0B1329;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(11, 61, 145, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.04) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(15, 23, 42, 0.03) 0px, transparent 50%);
-  color: #334155;
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.06) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(18, 29, 58, 0.4) 0px, transparent 50%);
+  color: #CBD5E1;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
 }
 
 /* Custom utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(18, 29, 58, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
 }
 
 .glass-panel-light {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .text-gradient-cyan-blue {
-  background: linear-gradient(135deg, #0B3D91 0%, #0284C7 100%);
+  background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-water-light {
-  background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -120,14 +120,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #0B1329;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #1E293B;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0B3D91;
+  background: #38BDF8;
 }

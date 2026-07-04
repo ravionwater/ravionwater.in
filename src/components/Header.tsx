@@ -43,10 +43,10 @@ export default function Header() {
               <Droplets className="w-6 h-6 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-wider text-white uppercase group-hover:text-brand-cyan transition-colors duration-300">
+              <span className="text-base font-bold tracking-wider text-white uppercase group-hover:text-brand-cyan transition-colors duration-300">
                 Ravion Water
               </span>
-              <span className="text-[10px] text-brand-sky uppercase tracking-widest font-semibold -mt-1">
+              <span className="text-[9px] text-brand-sky uppercase tracking-widest font-semibold -mt-1">
                 Tech
               </span>
             </div>
@@ -58,7 +58,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-brand-light hover:text-brand-cyan transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-cyan after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300"
+                className="text-xs font-medium text-brand-light hover:text-brand-cyan transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-cyan after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300"
               >
                 {link.name}
               </a>

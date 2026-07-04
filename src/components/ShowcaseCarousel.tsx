@@ -158,11 +158,11 @@ export default function ShowcaseCarousel() {
           <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
             State-of-the-Art Showcase
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-4">
             System & Project <span className="text-gradient-cyan-blue">Gallery</span>
           </h2>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-          <p className="mt-4 text-base text-brand-light font-medium">
+          <p className="mt-4 text-sm text-brand-light font-medium">
             Browse our full range of high-purity water generation skids, distribution loops, and automation interfaces. Slides auto-rotate every 3 seconds. Hover to pause.
           </p>
         </div>
@@ -193,9 +193,9 @@ export default function ShowcaseCarousel() {
                     fill
                     priority
                     sizes="(max-w-1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-contain p-6 group-hover:scale-[1.02] transition-transform duration-750"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brand-deep/70 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brand-deep/20 via-transparent to-transparent pointer-events-none"></div>
                   
                   {/* Category Badge */}
                   <span className="absolute top-6 left-6 bg-brand-deep/80 border border-white/10 text-brand-sky text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg backdrop-blur-sm shadow-md">
@@ -219,10 +219,10 @@ export default function ShowcaseCarousel() {
                 >
                   {/* Header */}
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                       {currentItem.title}
                     </h3>
-                    <span className="text-sm font-semibold text-brand-sky block mt-1 tracking-wider">
+                    <span className="text-xs font-semibold text-brand-sky block mt-1 tracking-wider">
                       {currentItem.subtitle}
                     </span>
                   </div>
@@ -230,16 +230,16 @@ export default function ShowcaseCarousel() {
                   <div className="w-12 h-0.5 bg-brand-cyan rounded-full"></div>
 
                   {/* Description */}
-                  <p className="text-sm text-brand-light leading-relaxed">
+                  <p className="text-xs text-brand-light leading-relaxed">
                     {currentItem.description}
                   </p>
 
                   {/* Features Checklist */}
                   <ul className="space-y-3">
                     {currentItem.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-brand-light">
-                        <span className="flex-shrink-0 w-5 h-5 rounded-md bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center mr-3 mt-0.5">
-                          <Check className="w-3.5 h-3.5 text-brand-cyan" />
+                      <li key={idx} className="flex items-start text-xs text-brand-light">
+                        <span className="flex-shrink-0 w-4 h-4 rounded-md bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center mr-3 mt-0.5">
+                          <Check className="w-3 h-3 text-brand-cyan" />
                         </span>
                         <span>{feature}</span>
                       </li>

@@ -70,7 +70,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto"
           >
             High-Purity Water Systems for{" "}
             <span className="text-gradient-cyan-blue">Pharmaceutical Excellence</span>
@@ -80,7 +80,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl text-brand-light max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
+            className="text-sm sm:text-base text-brand-light max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
           >
             Engineering FDA-compliant, fully validated Purified Water (PW), Water for Injection (WFI), and Pure Steam Systems (PSG) for global biotechnology leaders.
           </motion.p>
@@ -119,10 +119,10 @@ export default function Home() {
               { val: "24/7", label: "Operational Support" }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                   <span className="text-gradient-cyan-blue">{stat.val}</span>
                 </div>
-                <div className="text-[10px] sm:text-xs font-semibold text-brand-light uppercase tracking-wider mt-1.5">
+                <div className="text-[9px] sm:text-xs font-semibold text-brand-light uppercase tracking-wider mt-1.5">
                   {stat.label}
                 </div>
               </div>
@@ -143,14 +143,14 @@ export default function Home() {
               <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
                 Engineering Integrity
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                 Pioneering Pure Water Solutions for Critical Industries
               </h2>
               <div className="w-12 h-1 bg-brand-cyan rounded-full"></div>
-              <p className="text-brand-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-brand-light leading-relaxed">
                 In pharmaceutical and biotech manufacturing, the quality of water is paramount. Contaminants can ruin batches and halt production. That is why our pure water systems are designed with uncompromising quality, strictly complying with FDA, USP, and EP regulations.
               </p>
-              <p className="text-brand-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-brand-light leading-relaxed">
                 We engineer, weld, and install customized Purified Water (PW), Water for Injection (WFI), and Pure Steam Systems. From initial sanitary design and modular skid fabrication to complete site validation (IQ/OQ/PQ), our projects represent the pinnacle of hygienic process engineering.
               </p>
 
@@ -258,11 +258,11 @@ export default function Home() {
             <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
               Start Your Project
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-4">
               Connect With Our Engineering Team
             </h2>
             <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-            <p className="mt-4 text-base text-brand-light font-medium">
+            <p className="mt-4 text-sm text-brand-light font-medium">
               Have specific engineering requirements or need assistance with loop design? Speak directly to our high-purity water process engineers.
             </p>
           </div>
@@ -271,10 +271,10 @@ export default function Home() {
             {/* Contact Details Panel */}
             <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
               <div className="space-y-6">
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-lg font-bold text-white">
                   Corporate Office & Support
                 </h3>
-                <p className="text-sm text-brand-light leading-relaxed">
+                <p className="text-xs text-brand-light leading-relaxed">
                   We look forward to helping you design a compliant, robust, and low-lifecycle-cost pure water setup. Feel free to visit or drop us a line.
                 </p>
 
@@ -286,7 +286,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="block text-[10px] uppercase font-bold text-brand-light">Corporate Office</span>
-                      <span className="text-sm font-bold text-white leading-relaxed">
+                      <span className="text-xs font-bold text-white leading-relaxed">
                         Plot No. 189, IDA Jeedimetla, Quthubullapur, Hyderabad, Telangana – 500055
                       </span>
                     </div>
@@ -299,7 +299,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="block text-[10px] uppercase font-bold text-brand-light">Direct Call</span>
-                      <a href="tel:+919985479095" className="text-sm font-bold text-white hover:text-brand-cyan transition-colors">
+                      <a href="tel:+919985479095" className="text-xs font-bold text-white hover:text-brand-cyan transition-colors">
                         +91 99854 79095
                       </a>
                     </div>
@@ -312,7 +312,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="block text-[10px] uppercase font-bold text-brand-light">Email Address</span>
-                      <a href="mailto:info@ravionwater.in" className="text-sm font-bold text-white hover:text-brand-cyan transition-colors">
+                      <a href="mailto:info@ravionwater.in" className="text-xs font-bold text-white hover:text-brand-cyan transition-colors">
                         info@ravionwater.in
                       </a>
                     </div>
@@ -325,7 +325,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span className="block text-[10px] uppercase font-bold text-brand-light">Business Hours</span>
-                      <span className="text-sm font-bold text-white">
+                      <span className="text-xs font-bold text-white">
                         Mon - Sat: 9:00 AM - 6:00 PM (IST)
                       </span>
                     </div>

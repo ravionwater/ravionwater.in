@@ -196,7 +196,102 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. SHOWCASE GALLERY CAROUSEL */}
+      {/* 3. CORE CATEGORIES SECTION */}
+      <section className="py-16 relative overflow-hidden bg-brand-deep/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
+              Explore Our Scope
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-4">
+              Our Core Business <span className="text-gradient-cyan-blue">Capabilities</span>
+            </h2>
+            <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
+            <p className="mt-4 text-sm text-brand-light font-medium">
+              We deliver end-to-end expertise in high-purity water generation, sterile storage, distribution systems, spares, and site engineering.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Products Card */}
+            <Link href="/products" className="group">
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="relative h-[320px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-8 border border-cyan-500/20 bg-gradient-to-br from-[#0B1528] via-[#0D1F3D] to-[#0A2E5C] hover:border-brand-cyan/60 hover:shadow-brand-cyan/20 transition-all duration-300 cursor-pointer"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 rounded-full blur-2xl pointer-events-none group-hover:bg-brand-cyan/20 transition-all"></div>
+                <div className="p-3 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/20 w-fit">
+                  <Droplets className="w-6 h-6 text-brand-cyan" />
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none group-hover:text-brand-cyan transition-colors">
+                    PRODUCTS
+                  </h3>
+                  <p className="text-xs text-slate-300 mt-3 font-medium leading-relaxed">
+                    PW generation skids, multi-column WFI plants, pure steam generators, storage tanks, and circulation loops.
+                  </p>
+                  <span className="inline-flex items-center text-xs font-bold text-brand-cyan mt-4 group-hover:translate-x-1.5 transition-transform duration-300">
+                    Browse Products &rarr;
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* Spares Card */}
+            <Link href="/spares" className="group">
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="relative h-[320px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-8 border border-emerald-500/20 bg-gradient-to-br from-[#051C1A] via-[#08332F] to-[#04473E] hover:border-emerald-400/60 hover:shadow-emerald-500/20 transition-all duration-300 cursor-pointer"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-emerald-500/20 transition-all"></div>
+                <div className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 w-fit">
+                  <Cpu className="w-6 h-6 text-emerald-400" />
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none group-hover:text-emerald-400 transition-colors">
+                    SPARES
+                  </h3>
+                  <p className="text-xs text-slate-300 mt-3 font-medium leading-relaxed">
+                    ASME BPE sanitary pipes & fittings, diaphragm valves, pumps, filtration membranes, and online instrumentation.
+                  </p>
+                  <span className="inline-flex items-center text-xs font-bold text-emerald-400 mt-4 group-hover:translate-x-1.5 transition-transform duration-300">
+                    Explore Spares &rarr;
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
+
+            {/* Services Card */}
+            <Link href="/services" className="group">
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="relative h-[320px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-8 border border-violet-500/20 bg-gradient-to-br from-[#120F24] via-[#211942] to-[#2E1E5C] hover:border-violet-400/60 hover:shadow-violet-500/20 transition-all duration-300 cursor-pointer"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full blur-2xl pointer-events-none group-hover:bg-violet-500/20 transition-all"></div>
+                <div className="p-3 rounded-2xl bg-violet-500/10 border border-violet-500/20 w-fit">
+                  <ShieldCheck className="w-6 h-6 text-violet-400" />
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none group-hover:text-violet-400 transition-colors">
+                    SERVICES
+                  </h3>
+                  <p className="text-xs text-slate-300 mt-3 font-medium leading-relaxed">
+                    ASME IX orbital welding, video boroscopy, dynamic passivation, NDT testing, and IQ/OQ validation.
+                  </p>
+                  <span className="inline-flex items-center text-xs font-bold text-violet-400 mt-4 group-hover:translate-x-1.5 transition-transform duration-300">
+                    Explore Services &rarr;
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. SHOWCASE GALLERY CAROUSEL */}
       <ShowcaseCarousel />
 
       {/* 4. QUALITY & STANDARDS SECTION */}

@@ -1,21 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ArrowLeft, Wrench, Shield, Video } from "lucide-react";
+import { Check, ArrowLeft, X, Wrench, Shield, Video } from "lucide-react";
 
 interface ServiceItem {
+  id: number;
   name: string;
   desc: string;
   features: string[];
   specs: string[];
   image: string;
+  category: string;
 }
 
 export default function ServicesPage() {
+  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+
   const services: ServiceItem[] = [
     {
+      id: 1,
       name: "Erection, Fitment & Support",
       desc: "Structural mechanical erection of skids, tank alignment positioning, structural support engineering, and clean utility line erection.",
       features: [
@@ -24,9 +30,11 @@ export default function ServicesPage() {
         "Utility line connections (steam, water, air, drainage)"
       ],
       specs: ["Hygienic layouts", "Structural Integrity", "Seismic Compliance Options"],
-      image: "/images/sd.jpg"
+      image: "/images/sd.jpg",
+      category: "Site Erection"
     },
     {
+      id: 2,
       name: "Orbital Welding Services",
       desc: "Automated high-purity orbital TIG welding of SS 316L pipelines. Integrates automatic printouts for weld logs.",
       features: [
@@ -35,9 +43,11 @@ export default function ServicesPage() {
         "Purge oxygen monitoring down to < 10 ppm during weld"
       ],
       specs: ["ASME Sec IX certified", "Weld Logs provided", "Shield gas: Ar 99.999%"],
-      image: "/images/service1.jpg"
+      image: "/images/service1.jpg",
+      category: "Sanitary Welding"
     },
     {
+      id: 3,
       name: "Manual TIG Welding",
       desc: "Hygienic manual TIG welding for non-standard pipe connections, vessel jackets, structural supports, and utility lines.",
       features: [
@@ -46,9 +56,11 @@ export default function ServicesPage() {
         "Smooth internal surface grinding and post-weld clean"
       ],
       specs: ["ASME Section IX", "Certified Welders", "Root Purged"],
-      image: "/images/service1.jpg"
+      image: "/images/service1.jpg",
+      category: "Sanitary Welding"
     },
     {
+      id: 4,
       name: "Boroscopy & Videoscopy",
       desc: "Non-destructive internal inspection of sanitary orbital welds using high-resolution video boroscopes.",
       features: [
@@ -57,9 +69,11 @@ export default function ServicesPage() {
         "Flexible video scope inspecting deep bends and joints"
       ],
       specs: ["HD Video logs", "Weld Inspection", "FDA Audit ready"],
-      image: "/images/service2.jpg"
+      image: "/images/service2.jpg",
+      category: "Inspection"
     },
     {
+      id: 5,
       name: "Hydrotesting & Passivation",
       desc: "Hygienic pressure testing of loops followed by chemical passivation (nitric/citric acid) to build corrosion-resistant oxide layers.",
       features: [
@@ -68,9 +82,11 @@ export default function ServicesPage() {
         "TOC and conductivity rinse verification logs"
       ],
       specs: ["ASTM A380 Passivation", "Hydrotest certified", "Rinse water logs"],
-      image: "/images/service2.jpg"
+      image: "/images/service2.jpg",
+      category: "Treatment"
     },
     {
+      id: 6,
       name: "Radiography & NDT Services",
       desc: "Non-destructive testing (NDT) including radiography and dye penetrant testing of critical weld connections.",
       features: [
@@ -79,9 +95,11 @@ export default function ServicesPage() {
         "Certified NDT level II technicians for verification"
       ],
       specs: ["NDT Level II", "Radiography logs", "Weld Verification"],
-      image: "/images/service2.jpg"
+      image: "/images/service2.jpg",
+      category: "Inspection"
     },
     {
+      id: 7,
       name: "Documentation & Validation (DQ, IQ, OQ)",
       desc: "Complete documentation lifecycle generation (Validation Master Plan, DQ, IQ, OQ) following GAMP 5 Guidelines.",
       features: [
@@ -90,9 +108,11 @@ export default function ServicesPage() {
         "IQ/OQ protocols and calibration certificates for audit"
       ],
       specs: ["FDA USP EP Auditable", "GAMP 5 Guidelines", "Validation Packages"],
-      image: "/images/service1.jpg"
+      image: "/images/service1.jpg",
+      category: "Validation"
     },
     {
+      id: 8,
       name: "Installation & Commissioning",
       desc: "On-site skid commissioning, system loop tuning, PLC HMI interface configuration, and operator training.",
       features: [
@@ -101,7 +121,8 @@ export default function ServicesPage() {
         "Standard Operating Procedure (SOP) design support"
       ],
       specs: ["Turnkey Handover", "Operator Training", "PLC Loop Tuning"],
-      image: "/images/sd.jpg"
+      image: "/images/sd.jpg",
+      category: "Site Erection"
     }
   ];
 
@@ -123,52 +144,110 @@ export default function ServicesPage() {
             Technical Support
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
-            Our Engineering <span className="text-gradient-cyan-blue">Services</span>
+            Our Engineering <span className="text-gradient-cyan-blue">Services Gallery</span>
           </h1>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-sm text-brand-light font-medium leading-relaxed">
-            From sanitary orbital welding and detailed video boroscopy to full GAMP 5 documentation and site validation packages (DQ, IQ, OQ).
+            Click on any service card to view detailed compliance workflows, welding standards, and on-site validation deliverables.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {services.map((service) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              whileHover={{ y: -6 }}
-              className="rounded-2xl overflow-hidden glass-panel border border-white/5 flex flex-col justify-between h-full shadow-lg hover:shadow-2xl transition-all duration-300 group"
+              key={service.id}
+              onClick={() => setSelectedService(service)}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-2xl overflow-hidden glass-panel border border-white/5 shadow-lg hover:shadow-2xl cursor-pointer flex flex-col justify-between group transition-all duration-300"
             >
-              <div>
-                {/* Image */}
-                <div className="relative aspect-video w-full bg-brand-blue/10 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={`${service.name} Service India`}
-                    fill
-                    sizes="(max-w-768px) 100vw, 33vw"
-                    className="object-contain p-4 group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/30 to-transparent"></div>
-                </div>
+              {/* Image Area */}
+              <div className="relative aspect-square w-full bg-brand-dark/50 overflow-hidden flex items-center justify-center border-b border-white/5">
+                <Image
+                  src={service.image}
+                  alt={`${service.name} Service India`}
+                  fill
+                  sizes="(max-w-768px) 100vw, 33vw"
+                  className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-brand-deep/80 border border-white/10 text-[9px] font-bold text-brand-sky uppercase px-2.5 py-1 rounded-md">
+                  {service.category}
+                </span>
+              </div>
 
-                {/* Content */}
-                <div className="p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-white leading-tight group-hover:text-brand-cyan transition-colors">
-                    {service.name}
-                  </h3>
+              {/* Title Area */}
+              <div className="py-4 px-5 bg-brand-water/20 group-hover:bg-brand-water/40 transition-colors flex items-center justify-center">
+                <h3 className="text-sm font-extrabold text-white text-center leading-tight group-hover:text-brand-cyan transition-colors">
+                  {service.name}
+                </h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Detail Modal Overlay */}
+      <AnimatePresence>
+        {selectedService && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+            onClick={() => setSelectedService(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 30, scale: 0.95 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative max-w-4xl w-full rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl flex flex-col md:flex-row bg-[#08101E] min-h-[450px]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedService(null)}
+                className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/60 border border-white/10 text-brand-light hover:text-white transition-colors hover:bg-black/80 focus:outline-none"
+                aria-label="Close details"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Modal Image Panel */}
+              <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[250px] bg-brand-dark/40 border-b md:border-b-0 md:border-r border-white/5 flex items-center justify-center p-6">
+                <Image
+                  src={selectedService.image}
+                  alt={selectedService.name}
+                  fill
+                  className="object-contain p-8"
+                />
+                <span className="absolute top-6 left-6 bg-brand-deep/80 border border-white/10 text-[9px] font-bold text-brand-sky uppercase px-3 py-1.5 rounded-lg">
+                  {selectedService.category}
+                </span>
+              </div>
+
+              {/* Modal Content Panel */}
+              <div className="p-8 md:w-1/2 flex flex-col justify-between space-y-6">
+                <div className="space-y-4">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                      {selectedService.name}
+                    </h2>
+                    <div className="w-12 h-0.5 bg-brand-cyan rounded-full mt-3"></div>
+                  </div>
+
                   <p className="text-xs text-brand-light leading-relaxed">
-                    {service.desc}
+                    {selectedService.desc}
                   </p>
 
                   {/* Checklist */}
-                  <ul className="space-y-2 pt-2">
-                    {service.features.map((feature, fIdx) => (
+                  <ul className="space-y-2.5">
+                    {selectedService.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start text-xs text-brand-light">
-                        <span className="flex-shrink-0 w-4 h-4 rounded bg-brand-cyan/15 flex items-center justify-center mr-2 mt-0.5">
+                        <span className="flex-shrink-0 w-4 h-4 rounded bg-brand-cyan/15 flex items-center justify-center mr-3 mt-0.5">
                           <Check className="w-3 h-3 text-brand-cyan" />
                         </span>
                         <span>{feature}</span>
@@ -176,25 +255,26 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-              </div>
 
-              {/* Footer Specs */}
-              <div className="p-6 pt-0">
-                <div className="pt-4 border-t border-white/5 flex flex-wrap gap-1.5">
-                  {service.specs.map((spec, sIdx) => (
-                    <span
-                      key={sIdx}
-                      className="text-[9px] font-bold tracking-wider text-brand-light bg-white/5 border border-white/10 px-2 py-0.5 rounded uppercase"
-                    >
-                      {spec}
-                    </span>
-                  ))}
+                {/* Specs */}
+                <div className="pt-4 border-t border-white/5">
+                  <span className="block text-[10px] font-bold text-brand-medium uppercase tracking-wider mb-2">Technical Specs</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {selectedService.specs.map((spec, sIdx) => (
+                      <span
+                        key={sIdx}
+                        className="text-[9px] font-bold tracking-wider text-brand-light bg-white/5 border border-white/10 px-2.5 py-1 rounded uppercase"
+                      >
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
-          ))}
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

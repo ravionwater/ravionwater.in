@@ -57,7 +57,7 @@ export default function ServicesPage() {
         "Smooth internal surface grinding and post-weld clean"
       ],
       specs: ["ASME Section IX", "Certified Welders", "Root Purged"],
-      image: "/images/service1.jpg",
+      image: "/images/manual_tig_welding.png",
       category: "Sanitary Welding"
     },
     {
@@ -83,7 +83,7 @@ export default function ServicesPage() {
         "TOC and conductivity rinse verification logs"
       ],
       specs: ["ASTM A380 Passivation", "Hydrotest certified", "Rinse water logs"],
-      image: "/images/service2.jpg",
+      image: "/images/hydrotesting_passivation.png",
       category: "Treatment"
     },
     {
@@ -96,7 +96,7 @@ export default function ServicesPage() {
         "Certified NDT level II technicians for verification"
       ],
       specs: ["NDT Level II", "Radiography logs", "Weld Verification"],
-      image: "/images/service2.jpg",
+      image: "/images/radiography_ndt.png",
       category: "Inspection"
     },
     {
@@ -109,7 +109,7 @@ export default function ServicesPage() {
         "IQ/OQ protocols and calibration certificates for audit"
       ],
       specs: ["FDA USP EP Auditable", "GAMP 5 Guidelines", "Validation Packages"],
-      image: "/images/service1.jpg",
+      image: "/images/doc_validation.png",
       category: "Validation"
     },
     {
@@ -122,7 +122,7 @@ export default function ServicesPage() {
         "Standard Operating Procedure (SOP) design support"
       ],
       specs: ["Turnkey Handover", "Operator Training", "PLC Loop Tuning"],
-      image: "/images/sd.jpg",
+      image: "/images/commissioning_plc.png",
       category: "Site Erection"
     }
   ];

@@ -44,7 +44,7 @@ export default function SparesPage() {
         "Actuation: manual handwheel or pneumatic actuator"
       ],
       specs: ["FDA USP class VI", "Zero Dead-Leg", "CIP/SIP Rated"],
-      image: "/images/spares1.png",
+      image: "/images/diaphragm_valve.png",
       category: "Valves"
     },
     {
@@ -57,7 +57,7 @@ export default function SparesPage() {
         "Triclamp or orbital weld connections"
       ],
       specs: ["SS 316L MOC", "Cavity Filled", "Tri-Clamp Ends"],
-      image: "/images/spares1.png",
+      image: "/images/ball_valve.png",
       category: "Valves"
     },
     {
@@ -70,7 +70,7 @@ export default function SparesPage() {
         "Zero dead-leg sample valves with steam sanitization port"
       ],
       specs: ["Clean Steam trap", "EP MOC", "SIP Sterilizable"],
-      image: "/images/spares1.png",
+      image: "/images/steam_accessories.png",
       category: "Clean Steam"
     },
     {
@@ -96,7 +96,7 @@ export default function SparesPage() {
         "High silica and boron rejection characteristics"
       ],
       specs: ["RO Membranes", "EDI cells", "Hot-Water Sanitizable"],
-      image: "/images/spares2.png",
+      image: "/images/membranes_edi.png",
       category: "Filtration"
     },
     {

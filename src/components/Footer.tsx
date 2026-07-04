@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-sm font-bold tracking-wider text-slate-900 uppercase mb-4 border-l-2 border-brand-cyan pl-2">
-              Solutions
+              Systems
             </h3>
             <ul className="space-y-2.5">
               <li>

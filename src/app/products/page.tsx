@@ -190,11 +190,11 @@ export default function ProductsPage() {
             Hygienic Catalog
           </span>
           <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4 uppercase">
-            Our High-Purity <span className="text-yellow-500">Products</span> <span className="text-emerald-500">Gallery</span>
+            Our High-Purity <span className="text-yellow-500">Systems</span> <span className="text-emerald-500">Gallery</span>
           </h1>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-sm text-slate-600 font-medium leading-relaxed">
-            Click on any product image card to view the automated slideshow gallery with descriptions changing every 3 seconds.
+            Click on any system image card to view the automated slideshow gallery with descriptions changing every 3 seconds.
           </p>
         </div>
 

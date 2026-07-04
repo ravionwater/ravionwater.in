@@ -73,7 +73,7 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
-                    href="/products"
+                    href="#gallery"
                     className="px-5 py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal shadow-md shadow-brand-cyan/10 transition-all duration-300 hover:scale-[1.02] active:scale-95 text-center cursor-pointer"
                   >
                     Explore Our Systems
@@ -90,38 +90,58 @@ export default function Home() {
 
             {/* Right Card Stack (takes 3 columns on desktop) */}
             <div className="lg:col-span-3 flex flex-col gap-4">
-              {/* Products Card */}
-              <Link href="/products" className="group flex-1">
+              {/* Systems Card */}
+              <Link href="/products" className="group flex-1 relative rounded-2xl overflow-hidden shadow-md border border-slate-200/40 cursor-pointer">
+                {/* Background Image */}
+                <Image
+                  src="/images/system1.jpg"
+                  alt="Ravion Systems"
+                  fill
+                  sizes="(max-w-768px) 100vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-colors z-0"></div>
+
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="h-full rounded-2xl overflow-hidden shadow-md flex flex-col justify-between p-6 border border-blue-400/20 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 cursor-pointer"
+                  whileHover={{ y: -2 }}
+                  className="relative z-10 h-full flex flex-col justify-between p-6"
                 >
-                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 w-fit">
+                  <div className="p-2 rounded-xl bg-white/10 border border-white/20 w-fit">
                     <Droplets className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <h3 className="text-lg font-black text-white tracking-tight">
-                      PRODUCTS
+                      SYSTEMS
                     </h3>
                     <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
                       PW generation skids, WFI plants, PSG generators, storage tanks, and loops.
                     </p>
                     <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
-                      Browse Products &rarr;
+                      Browse Systems &rarr;
                     </span>
                   </div>
                 </motion.div>
               </Link>
 
               {/* Spares Card */}
-              <Link href="/spares" className="group flex-1">
+              <Link href="/spares" className="group flex-1 relative rounded-2xl overflow-hidden shadow-md border border-slate-200/40 cursor-pointer">
+                {/* Background Image */}
+                <Image
+                  src="/images/spares1.png"
+                  alt="Ravion Spares"
+                  fill
+                  sizes="(max-w-768px) 100vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-colors z-0"></div>
+
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="h-full rounded-2xl overflow-hidden shadow-md flex flex-col justify-between p-6 border border-orange-400/20 bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-400 hover:shadow-lg hover:shadow-yellow-500/10 cursor-pointer"
+                  whileHover={{ y: -2 }}
+                  className="relative z-10 h-full flex flex-col justify-between p-6"
                 >
-                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 w-fit">
+                  <div className="p-2 rounded-xl bg-white/10 border border-white/20 w-fit">
                     <Cpu className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -139,13 +159,23 @@ export default function Home() {
               </Link>
 
               {/* Services Card */}
-              <Link href="/services" className="group flex-1">
+              <Link href="/services" className="group flex-1 relative rounded-2xl overflow-hidden shadow-md border border-slate-200/40 cursor-pointer">
+                {/* Background Image */}
+                <Image
+                  src="/images/service1.jpg"
+                  alt="Ravion Services"
+                  fill
+                  sizes="(max-w-768px) 100vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-colors z-0"></div>
+
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="h-full rounded-2xl overflow-hidden shadow-md flex flex-col justify-between p-6 border border-emerald-400/20 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer"
+                  whileHover={{ y: -2 }}
+                  className="relative z-10 h-full flex flex-col justify-between p-6"
                 >
-                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 w-fit">
+                  <div className="p-2 rounded-xl bg-white/10 border border-white/20 w-fit">
                     <ShieldCheck className="w-5 h-5 text-white" />
                   </div>
                   <div>

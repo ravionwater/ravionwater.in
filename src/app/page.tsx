@@ -34,83 +34,142 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* 1. HERO SECTION */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden"
-      >
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero_water_system.png"
-            alt="Pharmaceutical Water System"
-            fill
-            priority
-            className="object-cover opacity-35 scale-105 animate-pulse-slow"
-          />
-          {/* Deep dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/90 via-brand-deep/75 to-brand-deep/100"></div>
-          {/* Cyan/Blue ambient light spots */}
-          <div className="absolute top-1/4 left-1/4 w-[350px] h-[350px] bg-brand-cyan/15 rounded-full blur-[100px] pointer-events-none"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-teal/15 rounded-full blur-[120px] pointer-events-none"></div>
-        </div>
+      {/* 1. UNIFIED HERO SECTION (GRID WITH HERO IMAGE AND CAPABILITY CARDS) */}
+      <section id="home" className="pt-28 pb-12 bg-white relative overflow-hidden">
+        {/* Background ambient lighting */}
+        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-brand-teal/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-brand-cyan/10 border border-brand-cyan/20 px-4 py-1.5 rounded-full mb-6"
-          >
-            <Droplets className="w-4 h-4 text-brand-cyan" />
-            <span className="text-xs sm:text-sm font-semibold tracking-wider text-brand-sky uppercase">
-              Next-Gen High Purity Water Engineering
-            </span>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            {/* Left Hero Card (takes 9 columns on desktop) */}
+            <div className="lg:col-span-9 relative rounded-3xl overflow-hidden shadow-xl min-h-[480px] lg:min-h-[600px] flex items-center bg-slate-100">
+              {/* Background Image of Lab Researcher */}
+              <Image
+                src="/images/gallery_3.png"
+                alt="Ravion Water Tech High-Purity Engineering India"
+                fill
+                priority
+                className="object-cover object-center"
+              />
+              {/* Soft overlay for text readability */}
+              <div className="absolute inset-0 bg-slate-900/10 pointer-events-none"></div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6 leading-tight max-w-5xl mx-auto uppercase"
-          >
-            Find Your <span className="text-yellow-500">High-Purity System</span> <span className="text-emerald-500">in India</span>
-          </motion.h1>
+              {/* Overlaid Text Box */}
+              <div className="absolute left-6 sm:left-12 max-w-lg p-6 sm:p-8 rounded-3xl bg-white/90 backdrop-blur-md border border-white/20 shadow-xl z-10">
+                <span className="inline-flex items-center space-x-2 bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1 rounded-full mb-4">
+                  <Droplets className="w-3.5 h-3.5 text-brand-cyan" />
+                  <span className="text-[10px] font-bold tracking-wider text-brand-cyan uppercase">
+                    Next-Gen High Purity Water Engineering
+                  </span>
+                </span>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed font-semibold"
-          >
-            Engineering FDA USP compliant, fully validated Purified Water (PW) Systems, Water for Injection (WFI) Plants, and Pure Steam Generators (PSG) for pharmaceutical hubs in Hyderabad, Telangana, and across India.
-          </motion.p>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 mb-4 leading-tight uppercase">
+                  Find Your <span className="text-yellow-500">High-Purity System</span> <span className="text-emerald-500">in India</span>
+                </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link
-              href="/products"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal shadow-xl shadow-brand-cyan/15 hover:shadow-brand-cyan/25 transition-all duration-300 hover:scale-[1.03] active:scale-95 text-center"
-            >
-              Explore Our Systems
-            </Link>
-            <Link
-              href="#contact"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 transition-all duration-300 hover:scale-[1.03] active:scale-95 text-center border border-slate-200"
-            >
-              Request Engineering Quote
-            </Link>
-          </motion.div>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold mb-6">
+                  Engineering FDA USP compliant, fully validated Purified Water (PW) Systems, Water for Injection (WFI) Plants, and Pure Steam Generators (PSG) for pharmaceutical hubs in Hyderabad, Telangana, and across India.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/products"
+                    className="px-5 py-3 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal shadow-md shadow-brand-cyan/10 transition-all duration-300 hover:scale-[1.02] active:scale-95 text-center cursor-pointer"
+                  >
+                    Explore Our Systems
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className="px-5 py-3 rounded-xl text-xs font-bold text-slate-700 hover:text-slate-950 bg-slate-100/90 border border-slate-200 transition-all duration-300 hover:scale-[1.02] active:scale-95 text-center"
+                  >
+                    Request Engineering Quote
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Card Stack (takes 3 columns on desktop) */}
+            <div className="lg:col-span-3 flex flex-col gap-4">
+              {/* Products Card */}
+              <Link href="/products" className="group flex-1">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="h-full rounded-2xl overflow-hidden shadow-md flex flex-col justify-between p-6 border border-blue-400/20 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 cursor-pointer"
+                >
+                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 w-fit">
+                    <Droplets className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-black text-white tracking-tight">
+                      PRODUCTS
+                    </h3>
+                    <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
+                      PW generation skids, WFI plants, PSG generators, storage tanks, and loops.
+                    </p>
+                    <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
+                      Browse Products &rarr;
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Spares Card */}
+              <Link href="/spares" className="group flex-1">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="h-full rounded-2xl overflow-hidden shadow-md flex flex-col justify-between p-6 border border-orange-400/20 bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-400 hover:shadow-lg hover:shadow-yellow-500/10 cursor-pointer"
+                >
+                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 w-fit">
+                    <Cpu className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-black text-white tracking-tight">
+                      SPARES
+                    </h3>
+                    <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
+                      ASME BPE pipes, fittings, diaphragm valves, pumps, and instruments.
+                    </p>
+                    <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
+                      Explore Spares &rarr;
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
+
+              {/* Services Card */}
+              <Link href="/services" className="group flex-1">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="h-full rounded-2xl overflow-hidden shadow-md flex flex-col justify-between p-6 border border-emerald-400/20 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer"
+                >
+                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 w-fit">
+                    <ShieldCheck className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-black text-white tracking-tight">
+                      SERVICES
+                    </h3>
+                    <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
+                      ASME IX orbital welding, boroscopy, passivation, and IQ/OQ validation.
+                    </p>
+                    <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
+                      Explore Services &rarr;
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
+            </div>
+          </div>
 
           {/* Stats Bar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-20 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl glass-panel border border-white/5 shadow-2xl"
+            className="mt-16 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl glass-panel border border-slate-200/80 shadow-lg bg-slate-50"
           >
             {[
               { val: "150+", label: "Systems Commissioned" },
@@ -210,100 +269,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. CORE CATEGORIES SECTION */}
-      <section className="py-16 relative overflow-hidden bg-brand-deep/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
-              Explore Our Scope
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4 uppercase">
-              Our Core Business <span className="text-yellow-500">Capabilities</span>
-            </h2>
-            <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-            <p className="mt-4 text-sm text-slate-600 font-semibold">
-              We deliver end-to-end expertise in high-purity water generation, sterile storage, distribution systems, spares, and site engineering.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Products Card */}
-            <Link href="/products" className="group">
-              <motion.div
-                whileHover={{ y: -10, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative h-[340px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-8 border border-blue-400/20 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 hover:border-cyan-300 hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer"
-              >
-                <div className="absolute top-0 right-0 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none group-hover:bg-white/20 transition-all"></div>
-                <div className="p-3.5 rounded-2xl bg-white/10 border border-white/20 w-fit">
-                  <Droplets className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none">
-                    PRODUCTS
-                  </h3>
-                  <p className="text-xs text-white/90 mt-3 font-semibold leading-relaxed">
-                    PW generation skids, multi-column WFI plants, pure steam generators, storage tanks, and circulation loops.
-                  </p>
-                  <span className="inline-flex items-center text-xs font-bold text-white mt-4 group-hover:translate-x-1.5 transition-transform duration-300 bg-white/10 border border-white/20 px-3 py-1 rounded-full">
-                    Browse Products &rarr;
-                  </span>
-                </div>
-              </motion.div>
-            </Link>
-
-            {/* Spares Card */}
-            <Link href="/spares" className="group">
-              <motion.div
-                whileHover={{ y: -10, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative h-[340px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-8 border border-orange-400/20 bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-400 hover:border-yellow-300 hover:shadow-yellow-500/20 transition-all duration-300 cursor-pointer"
-              >
-                <div className="absolute top-0 right-0 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none group-hover:bg-white/20 transition-all"></div>
-                <div className="p-3.5 rounded-2xl bg-white/10 border border-white/20 w-fit">
-                  <Cpu className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none">
-                    SPARES
-                  </h3>
-                  <p className="text-xs text-white/90 mt-3 font-semibold leading-relaxed">
-                    ASME BPE sanitary pipes & fittings, diaphragm valves, pumps, filtration membranes, and online instrumentation.
-                  </p>
-                  <span className="inline-flex items-center text-xs font-bold text-white mt-4 group-hover:translate-x-1.5 transition-transform duration-300 bg-white/10 border border-white/20 px-3 py-1 rounded-full">
-                    Explore Spares &rarr;
-                  </span>
-                </div>
-              </motion.div>
-            </Link>
-
-            {/* Services Card */}
-            <Link href="/services" className="group">
-              <motion.div
-                whileHover={{ y: -10, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative h-[340px] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between p-8 border border-emerald-400/20 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400 hover:border-teal-300 hover:shadow-teal-500/20 transition-all duration-300 cursor-pointer"
-              >
-                <div className="absolute top-0 right-0 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none group-hover:bg-white/20 transition-all"></div>
-                <div className="p-3.5 rounded-2xl bg-white/10 border border-white/20 w-fit">
-                  <ShieldCheck className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-none">
-                    SERVICES
-                  </h3>
-                  <p className="text-xs text-white/90 mt-3 font-semibold leading-relaxed">
-                    ASME IX orbital welding, video boroscopy, dynamic passivation, NDT testing, and IQ/OQ validation.
-                  </p>
-                  <span className="inline-flex items-center text-xs font-bold text-white mt-4 group-hover:translate-x-1.5 transition-transform duration-300 bg-white/10 border border-white/20 px-3 py-1 rounded-full">
-                    Explore Services &rarr;
-                  </span>
-                </div>
-              </motion.div>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* 4. SHOWCASE GALLERY CAROUSEL */}
       <ShowcaseCarousel />

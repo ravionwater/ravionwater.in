@@ -26,7 +26,9 @@ export default function Header() {
     { name: "Products", href: "/products" },
     { name: "Spares", href: "/spares" },
     { name: "Services", href: "/services" },
-    { name: "Contact", href: "/#contact" },
+    { name: "About", href: "/#about" },
+    { name: "Blogs", href: "/#contact" },
+    { name: "Contact Us", href: "/#contact" },
   ];
 
   return (
@@ -64,12 +66,6 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/#contact"
-              className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal transition-all duration-300 shadow-md shadow-brand-cyan/15 hover:shadow-brand-cyan/25 hover:scale-[1.02] active:scale-95"
-            >
-              Get a Quote
-            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -93,7 +89,7 @@ export default function Header() {
           isMobileMenuOpen ? "max-h-[400px] opacity-100 py-6" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="px-4 space-y-4">
+        <div className="px-4 space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -104,15 +100,6 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          <div className="pt-4 border-t border-slate-100">
-            <Link
-              href="/#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-center px-4 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal transition-all duration-300 shadow-md shadow-brand-cyan/15"
-            >
-              Get a Quote
-            </Link>
-          </div>
         </div>
       </div>
     </header>

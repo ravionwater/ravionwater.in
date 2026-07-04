@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* 2. ABOUT US SECTION */}
-      <section id="about" className="py-24 relative overflow-hidden bg-brand-deep">
+      <section id="about" className="pt-16 pb-12 relative overflow-hidden bg-brand-deep">
         {/* Glow decoration */}
         <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-brand-cyan/5 rounded-full blur-[80px] pointer-events-none"></div>
 
@@ -200,7 +200,7 @@ export default function Home() {
       <ShowcaseCarousel />
 
       {/* 4. QUALITY & STANDARDS SECTION */}
-      <section id="standards" className="py-24 relative overflow-hidden bg-brand-deep">
+      <section id="standards" className="py-16 relative overflow-hidden bg-brand-deep">
         <div className="absolute bottom-12 left-1/4 w-[400px] h-[400px] bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -249,7 +249,7 @@ export default function Home() {
 
 
       {/* 6. CONTACT & INQUIRY SECTION */}
-      <section id="contact" className="py-24 relative overflow-hidden bg-brand-deep/30">
+      <section id="contact" className="py-16 relative overflow-hidden bg-brand-deep/30">
         {/* Glow decoration */}
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
 

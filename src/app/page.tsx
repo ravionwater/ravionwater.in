@@ -91,103 +91,106 @@ export default function Home() {
             {/* Right Card Stack (takes 3 columns on desktop) */}
             <div className="lg:col-span-3 flex flex-col gap-4">
               {/* Systems Card */}
-              <Link href="/products" className="group flex-1 relative rounded-2xl overflow-hidden shadow-md border border-slate-200/40 cursor-pointer">
-                {/* Background Image */}
-                <Image
-                  src="/images/system1.jpg"
-                  alt="Ravion Systems"
-                  fill
-                  sizes="(max-w-768px) 100vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-colors z-0"></div>
-
+              <Link href="/products" className="group flex-1">
                 <motion.div
-                  whileHover={{ y: -2 }}
-                  className="relative z-10 h-full flex flex-col justify-between p-6"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="h-full rounded-2xl overflow-hidden shadow-md flex items-center justify-between p-5 border border-blue-400/20 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 cursor-pointer"
                 >
-                  <div className="p-2 rounded-xl bg-white/10 border border-white/20 w-fit">
-                    <Droplets className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-black text-white tracking-tight">
-                      SYSTEMS
-                    </h3>
-                    <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
+                  <div className="flex-1 flex flex-col justify-between h-full space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="p-1.5 rounded-lg bg-white/15 border border-white/25">
+                        <Droplets className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-xs font-black tracking-widest text-white uppercase">Systems</span>
+                    </div>
+                    <p className="text-[10px] text-white/90 font-medium leading-tight">
                       PW generation skids, WFI plants, PSG generators, storage tanks, and loops.
                     </p>
-                    <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[9px] font-bold text-white group-hover:translate-x-1 transition-transform duration-300 w-fit underline decoration-white/30 decoration-2 underline-offset-4">
                       Browse Systems &rarr;
                     </span>
+                  </div>
+
+                  {/* Clean High-Definition Image Container */}
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-xl p-1.5 shadow-lg border border-white/10 flex items-center justify-center flex-shrink-0 ml-3">
+                    <Image
+                      src="/images/system1.jpg"
+                      alt="Ravion High Purity Systems"
+                      width={96}
+                      height={96}
+                      className="object-contain max-w-full max-h-full rounded-lg"
+                    />
                   </div>
                 </motion.div>
               </Link>
 
               {/* Spares Card */}
-              <Link href="/spares" className="group flex-1 relative rounded-2xl overflow-hidden shadow-md border border-slate-200/40 cursor-pointer">
-                {/* Background Image */}
-                <Image
-                  src="/images/spares1.png"
-                  alt="Ravion Spares"
-                  fill
-                  sizes="(max-w-768px) 100vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-colors z-0"></div>
-
+              <Link href="/spares" className="group flex-1">
                 <motion.div
-                  whileHover={{ y: -2 }}
-                  className="relative z-10 h-full flex flex-col justify-between p-6"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="h-full rounded-2xl overflow-hidden shadow-md flex items-center justify-between p-5 border border-orange-400/20 bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-400 hover:shadow-lg hover:shadow-yellow-500/10 cursor-pointer"
                 >
-                  <div className="p-2 rounded-xl bg-white/10 border border-white/20 w-fit">
-                    <Cpu className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-black text-white tracking-tight">
-                      SPARES
-                    </h3>
-                    <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
+                  <div className="flex-1 flex flex-col justify-between h-full space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="p-1.5 rounded-lg bg-white/15 border border-white/25">
+                        <Cpu className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-xs font-black tracking-widest text-white uppercase">Spares</span>
+                    </div>
+                    <p className="text-[10px] text-white/90 font-medium leading-tight">
                       ASME BPE pipes, fittings, diaphragm valves, pumps, and instruments.
                     </p>
-                    <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[9px] font-bold text-white group-hover:translate-x-1 transition-transform duration-300 w-fit underline decoration-white/30 decoration-2 underline-offset-4">
                       Explore Spares &rarr;
                     </span>
+                  </div>
+
+                  {/* Clean High-Definition Image Container */}
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-xl p-1.5 shadow-lg border border-white/10 flex items-center justify-center flex-shrink-0 ml-3">
+                    <Image
+                      src="/images/spares1.png"
+                      alt="Ravion Sanitary Spares"
+                      width={96}
+                      height={96}
+                      className="object-contain max-w-full max-h-full rounded-lg"
+                    />
                   </div>
                 </motion.div>
               </Link>
 
               {/* Services Card */}
-              <Link href="/services" className="group flex-1 relative rounded-2xl overflow-hidden shadow-md border border-slate-200/40 cursor-pointer">
-                {/* Background Image */}
-                <Image
-                  src="/images/service1.jpg"
-                  alt="Ravion Services"
-                  fill
-                  sizes="(max-w-768px) 100vw, 25vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-slate-950/70 group-hover:bg-slate-950/60 transition-colors z-0"></div>
-
+              <Link href="/services" className="group flex-1">
                 <motion.div
-                  whileHover={{ y: -2 }}
-                  className="relative z-10 h-full flex flex-col justify-between p-6"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                  className="h-full rounded-2xl overflow-hidden shadow-md flex items-center justify-between p-5 border border-emerald-400/20 bg-gradient-to-br from-emerald-600 via-emerald-500 to-teal-400 hover:shadow-lg hover:shadow-teal-500/10 cursor-pointer"
                 >
-                  <div className="p-2 rounded-xl bg-white/10 border border-white/20 w-fit">
-                    <ShieldCheck className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-black text-white tracking-tight">
-                      SERVICES
-                    </h3>
-                    <p className="text-[10px] text-white/90 mt-1.5 font-semibold leading-relaxed">
+                  <div className="flex-1 flex flex-col justify-between h-full space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="p-1.5 rounded-lg bg-white/15 border border-white/25">
+                        <ShieldCheck className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-xs font-black tracking-widest text-white uppercase">Services</span>
+                    </div>
+                    <p className="text-[10px] text-white/90 font-medium leading-tight">
                       ASME IX orbital welding, boroscopy, passivation, and IQ/OQ validation.
                     </p>
-                    <span className="inline-flex items-center text-[10px] font-bold text-white mt-3 group-hover:translate-x-1 transition-transform duration-300 bg-white/15 border border-white/25 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[9px] font-bold text-white group-hover:translate-x-1 transition-transform duration-300 w-fit underline decoration-white/30 decoration-2 underline-offset-4">
                       Explore Services &rarr;
                     </span>
+                  </div>
+
+                  {/* Clean High-Definition Image Container */}
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-xl p-1.5 shadow-lg border border-white/10 flex items-center justify-center flex-shrink-0 ml-3">
+                    <Image
+                      src="/images/service1.jpg"
+                      alt="Ravion Sterile Services"
+                      width={96}
+                      height={96}
+                      className="object-contain max-w-full max-h-full rounded-lg"
+                    />
                   </div>
                 </motion.div>
               </Link>

@@ -284,19 +284,19 @@ export default function SparesPage() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="relative w-full rounded-3xl overflow-hidden glass-panel border border-slate-200/80 shadow-2xl flex flex-col md:flex-row bg-white min-h-[450px]"
+                className="relative w-full rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row bg-white border border-slate-200 min-h-[450px]"
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedSpare(null)}
-                  className="absolute top-5 right-5 z-10 p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 transition-colors hover:bg-slate-200 focus:outline-none"
+                  className="absolute top-5 right-5 z-35 p-2.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-slate-900 shadow-md hover:bg-slate-50 transition-all focus:outline-none cursor-pointer active:scale-90"
                   aria-label="Close details"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
 
-                {/* Modal Image Panel */}
-                <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[280px] bg-slate-50 border-b md:border-b-0 md:border-r border-slate-100 flex items-center justify-center p-6">
+                {/* Modal Image Panel (Left - White background) */}
+                <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[280px] bg-white flex items-center justify-center p-6">
                   <Image
                     src={selectedSpare.image}
                     alt={selectedSpare.name}
@@ -304,13 +304,13 @@ export default function SparesPage() {
                     priority
                     className="object-contain p-8 animate-pulse-slow"
                   />
-                  <span className="absolute top-6 left-6 bg-white border border-slate-200 text-[9px] font-bold text-brand-cyan uppercase px-3 py-1.5 rounded-lg shadow-sm">
+                  <span className="absolute top-6 left-6 bg-white border border-slate-200 text-[10px] font-bold tracking-widest text-[#0B3D91] uppercase px-3.5 py-1.5 rounded-lg shadow-sm">
                     {selectedSpare.category}
                   </span>
                   
                   {/* Slideshow Progress Bar */}
                   {!isPaused && (
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-200/60 overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100 overflow-hidden">
                       <motion.div 
                         key={selectedSpare.id}
                         initial={{ width: "0%" }}
@@ -321,32 +321,32 @@ export default function SparesPage() {
                     </div>
                   )}
                   {isPaused && (
-                    <span className="absolute bottom-3 left-6 text-[9px] font-bold text-yellow-600 bg-yellow-550/10 px-2 py-0.5 rounded border border-yellow-500/20 uppercase tracking-widest">
+                    <span className="absolute bottom-6 left-6 text-[10px] font-bold text-amber-600 bg-white border border-slate-200 px-3.5 py-1.5 rounded-lg shadow-sm uppercase tracking-wider">
                       Slideshow Paused
                     </span>
                   )}
                 </div>
 
-                {/* Modal Content Panel */}
-                <div className="p-8 md:w-1/2 flex flex-col justify-between space-y-6">
+                {/* Modal Content Panel (Right - Light grey background) */}
+                <div className="p-8 md:w-1/2 flex flex-col justify-between bg-[#F3F4F6] border-t md:border-t-0 md:border-l border-slate-200 space-y-6">
                   <div className="space-y-4">
                     <div>
                       <h2 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
                         {selectedSpare.name}
                       </h2>
-                      <div className="w-12 h-0.5 bg-brand-cyan rounded-full mt-3"></div>
+                      <div className="w-12 h-0.5 bg-[#0B3D91] rounded-full mt-3"></div>
                     </div>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed font-semibold">
                       {selectedSpare.desc}
                     </p>
 
                     {/* Checklist */}
                     <ul className="space-y-2.5">
                       {selectedSpare.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex items-start text-xs text-slate-600">
-                          <span className="flex-shrink-0 w-4 h-4 rounded bg-brand-cyan/15 flex items-center justify-center mr-3 mt-0.5">
-                            <Check className="w-3 h-3 text-brand-cyan" />
+                        <li key={fIdx} className="flex items-start text-xs text-slate-600 font-semibold">
+                          <span className="flex-shrink-0 w-5 h-5 rounded-md bg-brand-teal/15 flex items-center justify-center mr-3 mt-0.5">
+                            <Check className="w-3.5 h-3.5 text-[#0B3D91]" />
                           </span>
                           <span>{feature}</span>
                         </li>
@@ -355,13 +355,13 @@ export default function SparesPage() {
                   </div>
 
                   {/* Specs */}
-                  <div className="pt-4 border-t border-slate-100">
+                  <div className="pt-4 border-t border-slate-200">
                     <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Technical Specs</span>
                     <div className="flex flex-wrap gap-1.5">
                       {selectedSpare.specs.map((spec, sIdx) => (
                         <span
                           key={sIdx}
-                          className="text-[9px] font-bold tracking-wider text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded uppercase"
+                          className="text-[9px] font-bold tracking-wider text-slate-700 bg-white border border-slate-200/80 px-3 py-1.5 rounded-md uppercase shadow-sm"
                         >
                           {spec}
                         </span>

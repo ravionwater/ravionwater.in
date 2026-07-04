@@ -156,8 +156,8 @@ export default function ProductsPage() {
           <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
             Hygienic Catalog
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
-            Our High-Purity <span className="text-gradient-cyan-blue">Products Gallery</span>
+          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mt-4 uppercase">
+            Our High-Purity <span className="text-yellow-400">Products</span> <span className="text-emerald-400">Gallery</span>
           </h1>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-sm text-brand-light font-medium leading-relaxed">
@@ -173,9 +173,9 @@ export default function ProductsPage() {
               onClick={() => setSelectedProduct(product)}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-2xl overflow-hidden glass-panel border border-white/5 shadow-lg hover:shadow-2xl cursor-pointer flex flex-col justify-between group transition-all duration-300"
+              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="rounded-2xl overflow-hidden glass-panel border border-white/5 hover:border-cyan-400/40 shadow-lg hover:shadow-cyan-500/10 cursor-pointer flex flex-col justify-between group transition-all duration-300"
             >
               {/* Image Area */}
               <div className="relative aspect-square w-full bg-brand-dark/50 overflow-hidden flex items-center justify-center border-b border-white/5">

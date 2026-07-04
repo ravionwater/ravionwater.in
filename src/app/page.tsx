@@ -3,48 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ShieldCheck, Cpu, Droplets, Award, FileText, Send, PhoneCall, Mail, Clock, MapPin } from "lucide-react";
-import SystemCard from "@/components/SystemCard";
-import Gallery from "@/components/Gallery";
+import ShowcaseCarousel from "@/components/ShowcaseCarousel";
 
 export default function Home() {
-  const systems = [
-    {
-      title: "Purified Water (PW) Systems",
-      subtitle: "RO + EDI Generation & Distribution",
-      imageSrc: "/images/pw_system.png",
-      specs: ["USP/EP PW Quality", "Conductivity < 1.3 µS/cm", "TOC < 500 ppb", "ASME BPE Standard"],
-      features: [
-        "Double pass Reverse Osmosis (RO) with Electro-Deionization (EDI).",
-        "Chemical-free continuous sanitization & demineralization.",
-        "Fully automated hot water sanitization cycle (up to 85°C).",
-        "Integrated PLC controller with 21 CFR Part 11 Audit Trail compliance."
-      ]
-    },
-    {
-      title: "Water for Injection (WFI) Systems",
-      subtitle: "Multi-Effect & Vapor Compression Distillation",
-      imageSrc: "/images/wfi_system.png",
-      specs: ["Endotoxin < 0.25 EU/ml", "USP/EP WFI Compliant", "SS 316L EP Finish", "GAMP 5 Automation"],
-      features: [
-        "Vapor compression and multi-effect thermal distillation plant.",
-        "Multi-stage separation of droplet-borne pyrogens & endotoxins.",
-        "Double tube-sheet design for feed water preheaters to prevent cross-contamination.",
-        "High efficiency operation reducing utilities consumption."
-      ]
-    },
-    {
-      title: "Pure Steam Generators (PSG)",
-      subtitle: "Saturated Pure Steam for Sterilization & SIP",
-      imageSrc: "/images/psg_system.png",
-      specs: ["Non-Condensable Gases < 3.5%", "Dryness Fraction > 0.9", "EN 285 Standard", "IQ/OQ Documentation"],
-      features: [
-        "Generates sterile, pyrogen-free saturated steam.",
-        "Centrifugal separation chamber ensures dry, high-quality steam output.",
-        "Equipped with degasser column to remove non-condensable gases.",
-        "Compliance with EN 285 and HTM 2010 sterilization guidelines."
-      ]
-    }
-  ];
 
   const standards = [
     {
@@ -235,40 +196,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. CORE SYSTEMS SECTION */}
-      <section id="systems" className="py-24 relative overflow-hidden bg-brand-deep/40">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-teal/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
-              Our Core Architecture
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
-              High-Purity Generation skids
-            </h2>
-            <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-            <p className="mt-4 text-base text-brand-light font-medium">
-              We design modular, skid-mounted systems that arrive fully pre-tested and ready for rapid integration. All models offer modular expansion and full SCADA automation.
-            </p>
-          </div>
-
-          {/* Systems Stack */}
-          <div className="space-y-12 max-w-6xl mx-auto">
-            {systems.map((sys, idx) => (
-              <SystemCard
-                key={idx}
-                title={sys.title}
-                subtitle={sys.subtitle}
-                imageSrc={sys.imageSrc}
-                specs={sys.specs}
-                features={sys.features}
-                delay={idx * 0.15}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 3. SHOWCASE GALLERY CAROUSEL */}
+      <ShowcaseCarousel />
 
       {/* 4. QUALITY & STANDARDS SECTION */}
       <section id="standards" className="py-24 relative overflow-hidden bg-brand-deep">
@@ -317,8 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. INTERACTIVE GALLERY */}
-      <Gallery />
+
 
       {/* 6. CONTACT & INQUIRY SECTION */}
       <section id="contact" className="py-24 relative overflow-hidden bg-brand-deep/30">

@@ -39,22 +39,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <a href="#systems" className="text-sm text-brand-light hover:text-white transition-colors">
+                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
                   Purified Water Systems (PW)
                 </a>
               </li>
               <li>
-                <a href="#systems" className="text-sm text-brand-light hover:text-white transition-colors">
+                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
                   Water for Injection (WFI)
                 </a>
               </li>
               <li>
-                <a href="#systems" className="text-sm text-brand-light hover:text-white transition-colors">
+                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
                   Pure Steam Generators (PSG)
                 </a>
               </li>
               <li>
-                <a href="#systems" className="text-sm text-brand-light hover:text-white transition-colors">
+                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
                   Sanitary Loop Piping
                 </a>
               </li>

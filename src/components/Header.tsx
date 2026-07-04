@@ -22,9 +22,8 @@ export default function Header() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
-    { name: "Our Systems", href: "#systems" },
+    { name: "Showcase Gallery", href: "#gallery" },
     { name: "Standards", href: "#standards" },
-    { name: "Gallery", href: "#gallery" },
     { name: "Contact", href: "#contact" },
   ];
 

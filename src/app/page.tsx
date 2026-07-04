@@ -72,8 +72,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto"
           >
-            High-Purity Water Systems for{" "}
-            <span className="text-gradient-cyan-blue">Pharmaceutical Excellence</span>
+            Purified Water & WFI Systems <span className="text-gradient-cyan-blue">Manufacturer in India</span>
           </motion.h1>
 
           <motion.p
@@ -82,7 +81,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-sm sm:text-base text-brand-light max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
           >
-            Engineering FDA-compliant, fully validated Purified Water (PW), Water for Injection (WFI), and Pure Steam Systems (PSG) for global biotechnology leaders.
+            Engineering FDA USP compliant, fully validated Purified Water (PW) Systems, Water for Injection (WFI) Plants, and Pure Steam Generators (PSG) for pharmaceutical hubs in Hyderabad, Telangana, and across India.
           </motion.p>
 
           <motion.div
@@ -144,14 +143,14 @@ export default function Home() {
                 Engineering Integrity
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                Pioneering Pure Water Solutions for Critical Industries
+                Pioneering Purified Water & WFI System Engineering in Hyderabad
               </h2>
               <div className="w-12 h-1 bg-brand-cyan rounded-full"></div>
               <p className="text-xs sm:text-sm text-brand-light leading-relaxed">
                 In pharmaceutical and biotech manufacturing, the quality of water is paramount. Contaminants can ruin batches and halt production. That is why our pure water systems are designed with uncompromising quality, strictly complying with FDA, USP, and EP regulations.
               </p>
               <p className="text-xs sm:text-sm text-brand-light leading-relaxed">
-                We engineer, weld, and install customized Purified Water (PW), Water for Injection (WFI), and Pure Steam Systems. From initial sanitary design and modular skid fabrication to complete site validation (IQ/OQ/PQ), our projects represent the pinnacle of hygienic process engineering.
+                We design, fabricate, and install customized Purified Water (PW) generation skids, Multi-Effect WFI plants, and Pure Steam Generators (PSG) from our facility in Jeedimetla, Hyderabad. Serving pharmaceutical clients in Telangana, Andhra Pradesh, Gujarat, and nationwide, our projects include certified orbital-welded loop piping, passivation, and complete site validation (IQ/OQ/PQ).
               </p>
 
               {/* USP Checklist */}

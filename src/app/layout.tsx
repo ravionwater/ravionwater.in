@@ -11,8 +11,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ravion Water Tech | High Purity PW, WFI & PSG Engineering",
-  description: "Design, engineering, manufacturing, and validation of FDA-compliant high-purity water generation (PW, WFI), steam generators (PSG), and distribution loop systems.",
+  title: "Purified Water System & WFI Plant Manufacturer India | Ravion Water Tech",
+  description: "Ravion Water Tech is a leading manufacturer of FDA USP compliant Purified Water (PW) Systems, Water for Injection (WFI) Plants, Pure Steam Generators (PSG), and sanitary loop piping in Hyderabad, India.",
+  keywords: [
+    "Purified Water System manufacturer Hyderabad",
+    "WFI plant manufacturer India",
+    "Pure Steam Generator PSG manufacturer India",
+    "Pharma water system supplier Telangana",
+    "Sanitary loop piping installation India",
+    "RO EDI water systems pharmaceutical",
+    "ASME BPE piping fabrication Hyderabad",
+    "Hygienic process piping fabrication",
+    "Next-gen pharmaceutical water engineering",
+    "Ravion Water Tech Jeedimetla Hyderabad"
+  ].join(", "),
+  alternates: {
+    canonical: "https://ravionwater.in",
+  },
 };
 
 export default function RootLayout({

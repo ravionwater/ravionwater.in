@@ -185,7 +185,7 @@ export default function ShowcaseCarousel() {
                 >
                   <Image
                     src={currentItem.imageSrc}
-                    alt={currentItem.title}
+                    alt={`${currentItem.title} Manufacturer in India - Ravion Water Tech`}
                     fill
                     priority
                     sizes="(max-w-1024px) 100vw, 50vw"

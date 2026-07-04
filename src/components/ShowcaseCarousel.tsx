@@ -173,7 +173,7 @@ export default function ShowcaseCarousel() {
           <div className="min-h-[600px] lg:min-h-[480px] rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative flex flex-col lg:flex-row w-full transition-all duration-300">
             
             {/* Image Panel with AnimatePresence */}
-            <div className="relative lg:w-1/2 aspect-video lg:aspect-auto min-h-[250px] lg:min-h-full bg-brand-blue/20 overflow-hidden">
+            <div className="relative lg:w-1/2 aspect-[4/3] sm:aspect-video lg:aspect-auto min-h-[280px] lg:min-h-full bg-brand-blue/20 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentItem.id}
@@ -189,7 +189,7 @@ export default function ShowcaseCarousel() {
                     fill
                     priority
                     sizes="(max-w-1024px) 100vw, 50vw"
-                    className="object-contain p-6 group-hover:scale-[1.02] transition-transform duration-750"
+                    className="object-contain p-2 sm:p-4 lg:p-6 group-hover:scale-[1.02] transition-transform duration-750"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-brand-deep/20 via-transparent to-transparent pointer-events-none"></div>
                   
@@ -202,7 +202,7 @@ export default function ShowcaseCarousel() {
             </div>
 
             {/* Content Panel with AnimatePresence */}
-            <div className="p-8 sm:p-10 lg:w-1/2 flex flex-col justify-between relative bg-brand-blue/10 backdrop-blur-sm lg:border-l border-white/5">
+            <div className="p-5 sm:p-8 lg:p-10 lg:w-1/2 flex flex-col justify-between relative bg-brand-blue/10 backdrop-blur-sm lg:border-l border-white/5">
               
               <AnimatePresence mode="wait">
                 <motion.div
@@ -271,18 +271,37 @@ export default function ShowcaseCarousel() {
                   )}
                 </button>
 
-                {/* Pagination Dots */}
-                <div className="flex space-x-2">
-                  {items.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentIndex(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                        currentIndex === idx ? "bg-brand-cyan w-6" : "bg-white/20 hover:bg-white/40"
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    ></button>
-                  ))}
+                {/* Pagination Controls */}
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={handlePrev}
+                    className="p-1.5 rounded-lg text-brand-light hover:text-brand-cyan hover:bg-white/5 lg:hidden"
+                    aria-label="Previous slide"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  
+                  {/* Pagination Dots */}
+                  <div className="flex space-x-1.5">
+                    {items.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          currentIndex === idx ? "bg-brand-cyan w-4" : "bg-white/20 hover:bg-white/40"
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      ></button>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={handleNext}
+                    className="p-1.5 rounded-lg text-brand-light hover:text-brand-cyan hover:bg-white/5 lg:hidden"
+                    aria-label="Next slide"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
                 </div>
 
                 {/* Slide index */}
@@ -293,19 +312,19 @@ export default function ShowcaseCarousel() {
             </div>
           </div>
 
-          {/* Left Arrow Button */}
+          {/* Left Arrow Button (Desktop Only) */}
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 lg:-left-16 p-3 rounded-full bg-brand-deep/80 border border-white/10 text-brand-light hover:text-white hover:border-brand-cyan/50 hover:bg-brand-blue/80 shadow-lg transition-all focus:outline-none active:scale-90"
+            className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 lg:-left-16 p-3 rounded-full bg-brand-deep/80 border border-white/10 text-brand-light hover:text-white hover:border-brand-cyan/50 hover:bg-brand-blue/80 shadow-lg transition-all focus:outline-none active:scale-90"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
-          {/* Right Arrow Button */}
+          {/* Right Arrow Button (Desktop Only) */}
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 lg:-right-16 p-3 rounded-full bg-brand-deep/80 border border-white/10 text-brand-light hover:text-white hover:border-brand-cyan/50 hover:bg-brand-blue/80 shadow-lg transition-all focus:outline-none active:scale-90"
+            className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 lg:-right-16 p-3 rounded-full bg-brand-deep/80 border border-white/10 text-brand-light hover:text-white hover:border-brand-cyan/50 hover:bg-brand-blue/80 shadow-lg transition-all focus:outline-none active:scale-90"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6" />

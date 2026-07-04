@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Droplets } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,17 +39,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center space-x-2 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-teal to-brand-cyan shadow-lg shadow-brand-cyan/20 group-hover:scale-105 transition-transform duration-300">
-              <Droplets className="w-6 h-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base font-bold tracking-wider text-white uppercase group-hover:text-brand-cyan transition-colors duration-300">
-                Ravion Water
-              </span>
-              <span className="text-[9px] text-brand-sky uppercase tracking-widest font-semibold -mt-1">
-                Tech
-              </span>
+          <a href="#home" className="flex items-center group hover:scale-[1.02] transition-transform duration-300">
+            <div className="relative w-36 h-10 bg-white/95 rounded-xl px-2 shadow-lg shadow-black/10 flex items-center justify-center overflow-hidden border border-white/20">
+              <Image
+                src="/images/logo.png"
+                alt="Ravion Water Tech Logo"
+                width={130}
+                height={32}
+                priority
+                className="object-contain"
+              />
             </div>
           </a>
 

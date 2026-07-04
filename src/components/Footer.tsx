@@ -1,6 +1,7 @@
 "use client";
 
-import { Droplets, Phone, Mail, MapPin, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,17 +15,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Company Brief */}
           <div className="space-y-4">
-            <a href="#home" className="flex items-center space-x-2 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-teal to-brand-cyan flex items-center justify-center shadow-md shadow-brand-cyan/15">
-                <Droplets className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base font-bold tracking-wider text-white uppercase group-hover:text-brand-cyan transition-colors">
-                  Ravion Water
-                </span>
-                <span className="text-[9px] text-brand-sky uppercase tracking-widest font-semibold -mt-1">
-                  Tech
-                </span>
+            <a href="#home" className="flex items-center group hover:scale-[1.01] transition-transform duration-300">
+              <div className="relative w-36 h-10 bg-white/95 rounded-xl px-2 shadow-lg shadow-black/10 flex items-center justify-center overflow-hidden border border-white/20">
+                <Image
+                  src="/images/logo.png"
+                  alt="Ravion Water Tech Logo"
+                  width={130}
+                  height={32}
+                  priority
+                  className="object-contain"
+                />
               </div>
             </a>
             <p className="text-sm text-brand-light leading-relaxed">

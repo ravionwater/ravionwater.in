@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ArrowLeft, X, Settings, Layers, Eye } from "lucide-react";
+import { Check, ArrowLeft, X, ChevronLeft, ChevronRight, Settings, Layers, Eye } from "lucide-react";
 
 interface SpareItem {
   id: number;
@@ -18,6 +18,7 @@ interface SpareItem {
 
 export default function SparesPage() {
   const [selectedSpare, setSelectedSpare] = useState<SpareItem | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   const spares: SpareItem[] = [
     {
@@ -152,6 +153,38 @@ export default function SparesPage() {
     }
   ];
 
+  // Auto-play slideshow logic (3-second delay)
+  useEffect(() => {
+    if (!selectedSpare || isPaused) return;
+
+    const interval = setInterval(() => {
+      setSelectedSpare((current) => {
+        if (!current) return null;
+        const currentIndex = spares.findIndex((s) => s.id === current.id);
+        const nextIndex = (currentIndex + 1) % spares.length;
+        return spares[nextIndex];
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [selectedSpare, isPaused]);
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!selectedSpare) return;
+    const currentIndex = spares.findIndex((s) => s.id === selectedSpare.id);
+    const nextIndex = (currentIndex + 1) % spares.length;
+    setSelectedSpare(spares[nextIndex]);
+  };
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!selectedSpare) return;
+    const currentIndex = spares.findIndex((s) => s.id === selectedSpare.id);
+    const prevIndex = (currentIndex - 1 + spares.length) % spares.length;
+    setSelectedSpare(spares[prevIndex]);
+  };
+
   return (
     <div className="min-h-screen pt-28 pb-16 bg-brand-deep relative overflow-hidden">
       {/* Background ambient lighting */}
@@ -174,7 +207,7 @@ export default function SparesPage() {
           </h1>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-sm text-brand-light font-medium leading-relaxed">
-            Click on any spare component card to view detailed specifications, technical parameters, and material descriptions.
+            Click on any spare component card to view the automated slideshow gallery with descriptions changing every 3 seconds.
           </p>
         </div>
 
@@ -183,7 +216,10 @@ export default function SparesPage() {
           {spares.map((spare) => (
             <motion.div
               key={spare.id}
-              onClick={() => setSelectedSpare(spare)}
+              onClick={() => {
+                setIsPaused(false);
+                setSelectedSpare(spare);
+              }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -10, scale: 1.02 }}
@@ -216,88 +252,134 @@ export default function SparesPage() {
       </div>
 
       {/* Detail Modal Overlay */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {selectedSpare && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md"
             onClick={() => setSelectedSpare(null)}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 30, scale: 0.95 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative max-w-4xl w-full rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl flex flex-col md:flex-row bg-[#08101E] min-h-[450px]"
+            {/* Modal Container */}
+            <div 
+              className="relative max-w-4xl w-full flex items-center"
               onClick={(e) => e.stopPropagation()}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
             >
-              {/* Close Button */}
+              {/* Left Arrow Button */}
               <button
-                onClick={() => setSelectedSpare(null)}
-                className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/60 border border-white/10 text-brand-light hover:text-white transition-colors hover:bg-black/80 focus:outline-none"
-                aria-label="Close details"
+                onClick={handlePrev}
+                className="absolute -left-4 md:-left-16 z-20 p-3 rounded-full bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan hover:text-white hover:bg-brand-cyan/40 transition-all focus:outline-none active:scale-95 shadow-lg"
+                aria-label="Previous system"
               >
-                <X className="w-5 h-5" />
+                <ChevronLeft className="w-6 h-6" />
               </button>
 
-              {/* Modal Image Panel */}
-              <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[250px] bg-brand-dark/40 border-b md:border-b-0 md:border-r border-white/5 flex items-center justify-center p-6">
-                <Image
-                  src={selectedSpare.image}
-                  alt={selectedSpare.name}
-                  fill
-                  className="object-contain p-8"
-                />
-                <span className="absolute top-6 left-6 bg-brand-deep/80 border border-white/10 text-[9px] font-bold text-brand-sky uppercase px-3 py-1.5 rounded-lg">
-                  {selectedSpare.category}
-                </span>
-              </div>
+              {/* Animated Slideshow Card */}
+              <motion.div
+                key={selectedSpare.id}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="relative w-full rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl flex flex-col md:flex-row bg-[#08101E] min-h-[450px]"
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedSpare(null)}
+                  className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/60 border border-white/10 text-brand-light hover:text-white transition-colors hover:bg-black/80 focus:outline-none"
+                  aria-label="Close details"
+                >
+                  <X className="w-5 h-5" />
+                </button>
 
-              {/* Modal Content Panel */}
-              <div className="p-8 md:w-1/2 flex flex-col justify-between space-y-6">
-                <div className="space-y-4">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
-                      {selectedSpare.name}
-                    </h2>
-                    <div className="w-12 h-0.5 bg-brand-cyan rounded-full mt-3"></div>
+                {/* Modal Image Panel */}
+                <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[280px] bg-brand-dark/40 border-b md:border-b-0 md:border-r border-white/5 flex items-center justify-center p-6">
+                  <Image
+                    src={selectedSpare.image}
+                    alt={selectedSpare.name}
+                    fill
+                    priority
+                    className="object-contain p-8 animate-pulse-slow"
+                  />
+                  <span className="absolute top-6 left-6 bg-brand-deep/80 border border-white/10 text-[9px] font-bold text-brand-sky uppercase px-3 py-1.5 rounded-lg">
+                    {selectedSpare.category}
+                  </span>
+                  
+                  {/* Slideshow Progress Bar */}
+                  {!isPaused && (
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden">
+                      <motion.div 
+                        key={selectedSpare.id}
+                        initial={{ width: "0%" }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 3, ease: "linear" }}
+                        className="h-full bg-gradient-to-r from-brand-teal to-brand-cyan"
+                      />
+                    </div>
+                  )}
+                  {isPaused && (
+                    <span className="absolute bottom-3 left-6 text-[9px] font-bold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20 uppercase tracking-widest">
+                      Slideshow Paused
+                    </span>
+                  )}
+                </div>
+
+                {/* Modal Content Panel */}
+                <div className="p-8 md:w-1/2 flex flex-col justify-between space-y-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                        {selectedSpare.name}
+                      </h2>
+                      <div className="w-12 h-0.5 bg-brand-cyan rounded-full mt-3"></div>
+                    </div>
+
+                    <p className="text-xs text-brand-light leading-relaxed">
+                      {selectedSpare.desc}
+                    </p>
+
+                    {/* Checklist */}
+                    <ul className="space-y-2.5">
+                      {selectedSpare.features.map((feature, fIdx) => (
+                        <li key={fIdx} className="flex items-start text-xs text-brand-light">
+                          <span className="flex-shrink-0 w-4 h-4 rounded bg-brand-cyan/15 flex items-center justify-center mr-3 mt-0.5">
+                            <Check className="w-3 h-3 text-brand-cyan" />
+                          </span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <p className="text-xs text-brand-light leading-relaxed">
-                    {selectedSpare.desc}
-                  </p>
-
-                  {/* Checklist */}
-                  <ul className="space-y-2.5">
-                    {selectedSpare.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start text-xs text-brand-light">
-                        <span className="flex-shrink-0 w-4 h-4 rounded bg-brand-cyan/15 flex items-center justify-center mr-3 mt-0.5">
-                          <Check className="w-3 h-3 text-brand-cyan" />
+                  {/* Specs */}
+                  <div className="pt-4 border-t border-white/5">
+                    <span className="block text-[10px] font-bold text-brand-medium uppercase tracking-wider mb-2">Technical Specs</span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {selectedSpare.specs.map((spec, sIdx) => (
+                        <span
+                          key={sIdx}
+                          className="text-[9px] font-bold tracking-wider text-brand-light bg-white/5 border border-white/10 px-2.5 py-1 rounded uppercase"
+                        >
+                          {spec}
                         </span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Specs */}
-                <div className="pt-4 border-t border-white/5">
-                  <span className="block text-[10px] font-bold text-brand-medium uppercase tracking-wider mb-2">Technical Specs</span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {selectedSpare.specs.map((spec, sIdx) => (
-                      <span
-                        key={sIdx}
-                        className="text-[9px] font-bold tracking-wider text-brand-light bg-white/5 border border-white/10 px-2.5 py-1 rounded uppercase"
-                      >
-                        {spec}
-                      </span>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+
+              {/* Right Arrow Button */}
+              <button
+                onClick={handleNext}
+                className="absolute -right-4 md:-right-16 z-20 p-3 rounded-full bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan hover:text-white hover:bg-brand-cyan/40 transition-all focus:outline-none active:scale-95 shadow-lg"
+                aria-label="Next system"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

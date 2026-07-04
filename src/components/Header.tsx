@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,11 +22,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Showcase Gallery", href: "#gallery" },
-    { name: "Standards", href: "#standards" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Products", href: "/products" },
+    { name: "Spares", href: "/spares" },
+    { name: "Services", href: "/services" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -39,7 +40,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center group hover:scale-[1.02] transition-transform duration-300">
+          <Link href="/" className="flex items-center group hover:scale-[1.02] transition-transform duration-300">
             <div className="relative w-36 h-10 bg-white/95 rounded-xl px-2 shadow-lg shadow-black/10 flex items-center justify-center overflow-hidden border border-white/20">
               <Image
                 src="/images/logo.png"
@@ -50,25 +51,25 @@ export default function Header() {
                 className="object-contain"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-xs font-medium text-brand-light hover:text-brand-cyan transition-colors duration-300 relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-brand-cyan after:scale-x-0 hover:after:scale-x-100 after:origin-right hover:after:origin-left after:transition-transform after:duration-300"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal transition-all duration-300 shadow-md shadow-brand-cyan/15 hover:shadow-brand-cyan/25 hover:scale-[1.02] active:scale-95"
             >
               Get a Quote
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -94,23 +95,23 @@ export default function Header() {
       >
         <div className="px-4 space-y-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block text-base font-medium text-brand-light hover:text-brand-cyan hover:bg-white/5 px-3 py-2 rounded-lg transition-all"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <div className="pt-4 border-t border-white/5">
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full text-center px-4 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal transition-all duration-300 shadow-md shadow-brand-cyan/15"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
         </div>
       </div>

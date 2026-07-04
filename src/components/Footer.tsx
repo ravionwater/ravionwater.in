@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin, MessageSquare } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Company Brief */}
           <div className="space-y-4">
-            <a href="#home" className="flex items-center group hover:scale-[1.01] transition-transform duration-300">
+            <Link href="/" className="flex items-center group hover:scale-[1.01] transition-transform duration-300">
               <div className="relative w-36 h-10 bg-white/95 rounded-xl px-2 shadow-lg shadow-black/10 flex items-center justify-center overflow-hidden border border-white/20">
                 <Image
                   src="/images/logo.png"
@@ -26,7 +27,7 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-            </a>
+            </Link>
             <p className="text-sm text-brand-light leading-relaxed">
               Design, engineering, manufacturing, and validation of FDA-compliant high-purity water generation and distribution loops. Serving global biotechnology and pharmaceutical industries.
             </p>
@@ -39,24 +40,24 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/products" className="text-sm text-brand-light hover:text-white transition-colors">
                   Purified Water Systems (PW)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/products" className="text-sm text-brand-light hover:text-white transition-colors">
                   Water for Injection (WFI)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/products" className="text-sm text-brand-light hover:text-white transition-colors">
                   Pure Steam Generators (PSG)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/products" className="text-sm text-brand-light hover:text-white transition-colors">
                   Sanitary Loop Piping
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -68,24 +69,24 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <a href="#about" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/#about" className="text-sm text-brand-light hover:text-white transition-colors">
                   About the Company
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#standards" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/#standards" className="text-sm text-brand-light hover:text-white transition-colors">
                   Quality Standards
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/#gallery" className="text-sm text-brand-light hover:text-white transition-colors">
                   Project Gallery
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-sm text-brand-light hover:text-white transition-colors">
+                <Link href="/#contact" className="text-sm text-brand-light hover:text-white transition-colors">
                   Contact & Inquiries
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ShieldCheck, Cpu, Droplets, Award, FileText, Send, PhoneCall, Mail, Clock, MapPin } from "lucide-react";
 import ShowcaseCarousel from "@/components/ShowcaseCarousel";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -90,18 +91,18 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a
-              href="#gallery"
+            <Link
+              href="/products"
               className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-brand-teal to-brand-cyan hover:from-brand-cyan hover:to-brand-teal shadow-xl shadow-brand-cyan/15 hover:shadow-brand-cyan/25 transition-all duration-300 hover:scale-[1.03] active:scale-95 text-center"
             >
               Explore Our Systems
-            </a>
-            <a
+            </Link>
+            <Link
               href="#contact"
               className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-brand-light hover:text-white glass-panel-light hover:bg-white/10 transition-all duration-300 hover:scale-[1.03] active:scale-95 text-center border border-white/15"
             >
               Request Engineering Quote
-            </a>
+            </Link>
           </motion.div>
 
           {/* Stats Bar */}

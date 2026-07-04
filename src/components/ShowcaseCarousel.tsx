@@ -163,16 +163,12 @@ export default function ShowcaseCarousel() {
           </h2>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-sm text-brand-light font-medium">
-            Browse our full range of high-purity water generation skids, distribution loops, and automation interfaces. Slides auto-rotate every 3 seconds. Hover to pause.
+            Browse our full range of high-purity water generation skids, distribution loops, and automation interfaces. Slides auto-rotate every 3 seconds.
           </p>
         </div>
 
         {/* Carousel Container */}
-        <div 
-          className="relative max-w-6xl mx-auto"
-          onMouseEnter={() => setIsPlaying(false)}
-          onMouseLeave={() => setIsPlaying(true)}
-        >
+        <div className="relative max-w-6xl mx-auto">
           {/* Main Card */}
           <div className="min-h-[600px] lg:min-h-[480px] rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative flex flex-col lg:flex-row w-full transition-all duration-300">
             

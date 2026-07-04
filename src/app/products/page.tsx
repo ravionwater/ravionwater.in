@@ -189,11 +189,11 @@ export default function ProductsPage() {
           <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
             Hygienic Catalog
           </span>
-          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mt-4 uppercase">
-            Our High-Purity <span className="text-yellow-400">Products</span> <span className="text-emerald-400">Gallery</span>
+          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4 uppercase">
+            Our High-Purity <span className="text-yellow-500">Products</span> <span className="text-emerald-500">Gallery</span>
           </h1>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-          <p className="mt-4 text-sm text-brand-light font-medium leading-relaxed">
+          <p className="mt-4 text-sm text-slate-600 font-medium leading-relaxed">
             Click on any product image card to view the automated slideshow gallery with descriptions changing every 3 seconds.
           </p>
         </div>
@@ -211,10 +211,10 @@ export default function ProductsPage() {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="rounded-2xl overflow-hidden glass-panel border border-white/5 hover:border-cyan-400/40 shadow-lg hover:shadow-cyan-500/10 cursor-pointer flex flex-col justify-between group transition-all duration-300"
+              className="rounded-2xl overflow-hidden glass-panel border border-slate-200/80 hover:border-cyan-400/40 shadow-lg hover:shadow-cyan-500/10 cursor-pointer flex flex-col justify-between group transition-all duration-300"
             >
               {/* Image Area */}
-              <div className="relative aspect-square w-full bg-brand-dark/50 overflow-hidden flex items-center justify-center border-b border-white/5">
+              <div className="relative aspect-square w-full bg-slate-50 overflow-hidden flex items-center justify-center border-b border-slate-100">
                 <Image
                   src={product.image}
                   alt={`${product.name} Manufacturer India`}
@@ -222,14 +222,14 @@ export default function ProductsPage() {
                   sizes="(max-w-768px) 100vw, 33vw"
                   className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-4 left-4 bg-brand-deep/80 border border-white/10 text-[9px] font-bold text-brand-sky uppercase px-2.5 py-1 rounded-md">
+                <span className="absolute top-4 left-4 bg-white border border-slate-200 text-[9px] font-bold text-brand-cyan uppercase px-2.5 py-1 rounded-md shadow-sm">
                   {product.category}
                 </span>
               </div>
 
               {/* Title Area */}
               <div className="py-4 px-5 bg-brand-water/20 group-hover:bg-brand-water/40 transition-colors flex items-center justify-center">
-                <h3 className="text-sm font-extrabold text-white text-center leading-tight group-hover:text-brand-cyan transition-colors">
+                <h3 className="text-sm font-extrabold text-slate-900 text-center leading-tight group-hover:text-brand-cyan transition-colors">
                   {product.name}
                 </h3>
               </div>
@@ -271,19 +271,19 @@ export default function ProductsPage() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="relative w-full rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl flex flex-col md:flex-row bg-[#08101E] min-h-[450px]"
+                className="relative w-full rounded-3xl overflow-hidden glass-panel border border-slate-200/80 shadow-2xl flex flex-col md:flex-row bg-white min-h-[450px]"
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProduct(null)}
-                  className="absolute top-5 right-5 z-10 p-2 rounded-full bg-black/60 border border-white/10 text-brand-light hover:text-white transition-colors hover:bg-black/80 focus:outline-none"
+                  className="absolute top-5 right-5 z-10 p-2 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 transition-colors hover:bg-slate-200 focus:outline-none"
                   aria-label="Close details"
                 >
                   <X className="w-5 h-5" />
                 </button>
 
                 {/* Modal Image Panel */}
-                <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[280px] bg-brand-dark/40 border-b md:border-b-0 md:border-r border-white/5 flex items-center justify-center p-6">
+                <div className="relative md:w-1/2 aspect-video md:aspect-auto min-h-[280px] bg-slate-50 border-b md:border-b-0 md:border-r border-slate-100 flex items-center justify-center p-6">
                   <Image
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
@@ -291,13 +291,13 @@ export default function ProductsPage() {
                     priority
                     className="object-contain p-8 animate-pulse-slow"
                   />
-                  <span className="absolute top-6 left-6 bg-brand-deep/80 border border-white/10 text-[9px] font-bold text-brand-sky uppercase px-3 py-1.5 rounded-lg">
+                  <span className="absolute top-6 left-6 bg-white border border-slate-200 text-[9px] font-bold text-brand-cyan uppercase px-3 py-1.5 rounded-lg shadow-sm">
                     {selectedProduct.category}
                   </span>
                   
                   {/* Slideshow Progress Bar */}
                   {!isPaused && (
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-200/60 overflow-hidden">
                       <motion.div 
                         key={selectedProduct.id}
                         initial={{ width: "0%" }}
@@ -308,7 +308,7 @@ export default function ProductsPage() {
                     </div>
                   )}
                   {isPaused && (
-                    <span className="absolute bottom-3 left-6 text-[9px] font-bold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20 uppercase tracking-widest">
+                    <span className="absolute bottom-3 left-6 text-[9px] font-bold text-yellow-600 bg-yellow-550/10 px-2 py-0.5 rounded border border-yellow-500/20 uppercase tracking-widest">
                       Slideshow Paused
                     </span>
                   )}
@@ -318,20 +318,20 @@ export default function ProductsPage() {
                 <div className="p-8 md:w-1/2 flex flex-col justify-between space-y-6">
                   <div className="space-y-4">
                     <div>
-                      <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                      <h2 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
                         {selectedProduct.name}
                       </h2>
                       <div className="w-12 h-0.5 bg-brand-cyan rounded-full mt-3"></div>
                     </div>
 
-                    <p className="text-xs text-brand-light leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       {selectedProduct.desc}
                     </p>
 
                     {/* Checklist */}
                     <ul className="space-y-2.5">
                       {selectedProduct.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex items-start text-xs text-brand-light">
+                        <li key={fIdx} className="flex items-start text-xs text-slate-600">
                           <span className="flex-shrink-0 w-4 h-4 rounded bg-brand-cyan/15 flex items-center justify-center mr-3 mt-0.5">
                             <Check className="w-3 h-3 text-brand-cyan" />
                           </span>
@@ -342,13 +342,13 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Specs */}
-                  <div className="pt-4 border-t border-white/5">
-                    <span className="block text-[10px] font-bold text-brand-medium uppercase tracking-wider mb-2">Technical Specs</span>
+                  <div className="pt-4 border-t border-slate-100">
+                    <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Technical Specs</span>
                     <div className="flex flex-wrap gap-1.5">
                       {selectedProduct.specs.map((spec, sIdx) => (
                         <span
                           key={sIdx}
-                          className="text-[9px] font-bold tracking-wider text-brand-light bg-white/5 border border-white/10 px-2.5 py-1 rounded uppercase"
+                          className="text-[9px] font-bold tracking-wider text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded uppercase"
                         >
                           {spec}
                         </span>

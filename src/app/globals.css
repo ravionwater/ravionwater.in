@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-deep: #030712;       /* Deep space black */
-  --color-brand-dark: #09111E;       /* Deep slate-blue for cards */
-  --color-brand-blue: #1E293B;       /* Dark slate border */
-  --color-brand-medium: #64748B;     /* Subheadings (slate-500) */
-  --color-brand-light: #CBD5E1;      /* Paragraph text (slate-300) */
-  --color-brand-cyan: #00F0FF;       /* Electric cyan accent */
-  --color-brand-teal: #0088FF;       /* Vibrant blue accent */
-  --color-brand-accent: #FFFFFF;     /* White headings */
-  --color-brand-sky: #00F0FF;        /* Electric cyan */
-  --color-brand-water: #0F172A;      /* Deep overlay slate */
+  --color-brand-deep: #F8FAFC;       /* Clean light slate */
+  --color-brand-dark: #FFFFFF;       /* Pure white for cards */
+  --color-brand-blue: #E2E8F0;       /* Light slate border */
+  --color-brand-medium: #475569;     /* Subheadings (slate-600) */
+  --color-brand-light: #334155;      /* Paragraph text (slate-700) */
+  --color-brand-cyan: #0B3D91;       /* Brand dark blue accent */
+  --color-brand-teal: #0284C7;       /* Teal/blue secondary accent */
+  --color-brand-accent: #0F172A;     /* Dark slate headings */
+  --color-brand-sky: #0369A1;        /* Readable sky blue */
+  --color-brand-water: #F1F5F9;      /* Light overlay */
   
   --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
   --animate-fade-in-down: fade-in-down 0.8s ease-out forwards;
@@ -76,40 +76,40 @@ html {
 }
 
 body {
-  background-color: #030712;
+  background-color: #F8FAFC;
   background-image: 
-    radial-gradient(at 0% 0%, hsla(196,100%,49%,0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(180,100%,45%,0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, hsla(200,100%,40%,0.08) 0px, transparent 50%);
-  color: #E2E8F0;
+    radial-gradient(at 0% 0%, rgba(11, 61, 145, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.04) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(15, 23, 42, 0.03) 0px, transparent 50%);
+  color: #334155;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   overflow-x: hidden;
 }
 
 /* Custom utilities */
 .glass-panel {
-  background: rgba(9, 17, 30, 0.45);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
 }
 
 .glass-panel-light {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.5);
 }
 
 .text-gradient-cyan-blue {
-  background: linear-gradient(135deg, #00F0FF 0%, #0088FF 100%);
+  background: linear-gradient(135deg, #0B3D91 0%, #0284C7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-water-light {
-  background: linear-gradient(135deg, #ffffff 0%, #CBD5E1 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -120,14 +120,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00F0FF;
+  background: #0B3D91;
 }

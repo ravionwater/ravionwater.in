@@ -71,16 +71,16 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto uppercase"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6 leading-tight max-w-5xl mx-auto uppercase"
           >
-            Find Your <span className="text-yellow-400">High-Purity System</span> <span className="text-emerald-400">in India</span>
+            Find Your <span className="text-yellow-500">High-Purity System</span> <span className="text-emerald-500">in India</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-sm sm:text-base text-brand-light max-w-3xl mx-auto mb-10 leading-relaxed font-medium"
+            className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed font-semibold"
           >
             Engineering FDA USP compliant, fully validated Purified Water (PW) Systems, Water for Injection (WFI) Plants, and Pure Steam Generators (PSG) for pharmaceutical hubs in Hyderabad, Telangana, and across India.
           </motion.p>
@@ -99,7 +99,7 @@ export default function Home() {
             </Link>
             <Link
               href="#contact"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-brand-light hover:text-white glass-panel-light hover:bg-white/10 transition-all duration-300 hover:scale-[1.03] active:scale-95 text-center border border-white/15"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 transition-all duration-300 hover:scale-[1.03] active:scale-95 text-center border border-slate-200"
             >
               Request Engineering Quote
             </Link>
@@ -119,10 +119,10 @@ export default function Home() {
               { val: "24/7", label: "Operational Support" }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
-                <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
                   <span className="text-gradient-cyan-blue">{stat.val}</span>
                 </div>
-                <div className="text-[9px] sm:text-xs font-semibold text-brand-light uppercase tracking-wider mt-1.5">
+                <div className="text-[9px] sm:text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1.5">
                   {stat.label}
                 </div>
               </div>
@@ -144,16 +144,16 @@ export default function Home() {
                 <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
                   About Ravion Water Tech
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-4">
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-4 uppercase">
                   Pioneering Sterile Engineering & <span className="text-gradient-cyan-blue">Process Validation</span>
                 </h2>
                 <div className="w-16 h-1 bg-brand-cyan mt-4 rounded-full"></div>
               </div>
 
-              <p className="text-sm text-brand-light leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed font-medium">
                 Ravion Water Tech is a leading high-purity process engineering partner based in Hyderabad, India. We design, manufacture, and commission fully integrated Purified Water (PW), Water for Injection (WFI), and Pure Steam (PSG) skids that adhere to global regulatory norms including FDA, USP, and EP guidelines.
               </p>
-              <p className="text-sm text-brand-light leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed font-medium">
                 By leveraging automated ASME IX orbital welding, continuous quality instrumentation, and comprehensive DQ, IQ, and OQ verification protocols, we serve critical sterile process pipelines for major pharmaceutical, biotechnology, and healthcare facilities worldwide.
               </p>
 
@@ -163,8 +163,8 @@ export default function Home() {
                     <ShieldCheck className="w-5 h-5 text-brand-cyan" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">FDA / USP Ready</h4>
-                    <p className="text-[10px] text-brand-light">cGMP Compliant Systems</p>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">FDA / USP Ready</h4>
+                    <p className="text-[10px] text-slate-500">cGMP Compliant Systems</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -172,8 +172,8 @@ export default function Home() {
                     <Cpu className="w-5 h-5 text-brand-cyan" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">Automation</h4>
-                    <p className="text-[10px] text-brand-light">21 CFR Part 11 Skids</p>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Automation</h4>
+                    <p className="text-[10px] text-slate-500">21 CFR Part 11 Skids</p>
                   </div>
                 </div>
               </div>
@@ -182,26 +182,26 @@ export default function Home() {
             {/* Right side graphic card */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-teal/20 to-brand-cyan/20 rounded-3xl filter blur-xl opacity-30"></div>
-              <div className="relative glass-panel rounded-3xl p-8 border border-white/5 space-y-6">
-                <h3 className="text-lg font-bold text-white uppercase tracking-wider border-b border-white/5 pb-4">
+              <div className="relative glass-panel rounded-3xl p-8 border border-slate-200/80 shadow-lg space-y-6">
+                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-4">
                   Engineering Benchmarks
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-brand-light font-medium">Piping Finish (Electropolished)</span>
-                    <span className="text-white font-bold bg-white/5 px-2 py-0.5 rounded">Ra &lt; 0.38 µm</span>
+                    <span className="text-slate-600 font-semibold">Piping Finish (Electropolished)</span>
+                    <span className="text-slate-900 font-bold bg-slate-100 px-2 py-0.5 rounded">Ra &lt; 0.38 µm</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-brand-light font-medium">Loop Velocity Control</span>
-                    <span className="text-white font-bold bg-white/5 px-2 py-0.5 rounded">&gt; 1.2 m/s</span>
+                    <span className="text-slate-600 font-semibold">Loop Velocity Control</span>
+                    <span className="text-slate-900 font-bold bg-slate-100 px-2 py-0.5 rounded">&gt; 1.2 m/s</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-brand-light font-medium">Hot Loop Circulation</span>
-                    <span className="text-white font-bold bg-white/5 px-2 py-0.5 rounded">&gt; 80°C</span>
+                    <span className="text-slate-600 font-semibold">Hot Loop Circulation</span>
+                    <span className="text-slate-900 font-bold bg-slate-100 px-2 py-0.5 rounded">&gt; 80°C</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-brand-light font-medium">Welding Standards</span>
-                    <span className="text-white font-bold bg-white/5 px-2 py-0.5 rounded">ASME Section IX</span>
+                    <span className="text-slate-600 font-semibold">Welding Standards</span>
+                    <span className="text-slate-900 font-bold bg-slate-100 px-2 py-0.5 rounded">ASME Section IX</span>
                   </div>
                 </div>
               </div>
@@ -217,11 +217,11 @@ export default function Home() {
             <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
               Explore Our Scope
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mt-4 uppercase">
-              Our Core Business <span className="text-yellow-400">Capabilities</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4 uppercase">
+              Our Core Business <span className="text-yellow-500">Capabilities</span>
             </h2>
             <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-            <p className="mt-4 text-sm text-brand-light font-medium">
+            <p className="mt-4 text-sm text-slate-600 font-semibold">
               We deliver end-to-end expertise in high-purity water generation, sterile storage, distribution systems, spares, and site engineering.
             </p>
           </div>
@@ -317,11 +317,11 @@ export default function Home() {
             <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
               Zero Tolerance for Contamination
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-4">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-4 uppercase">
               Regulatory & Engineering Standards
             </h2>
             <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-            <p className="mt-4 text-base text-brand-light font-medium">
+            <p className="mt-4 text-base text-slate-600 font-medium">
               Compliance is not optional. Every system is validated to exceed global pharmacopoeia benchmarks and undergo thorough inspection before dispatch.
             </p>
           </div>
@@ -342,10 +342,10 @@ export default function Home() {
                   {std.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-lg font-bold text-slate-900">
                     {std.title}
                   </h3>
-                  <p className="mt-2 text-sm text-brand-light leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                     {std.desc}
                   </p>
                 </div>
@@ -367,11 +367,11 @@ export default function Home() {
             <span className="text-xs font-bold tracking-widest text-brand-cyan uppercase bg-brand-cyan/10 border border-brand-cyan/20 px-3 py-1.5 rounded-full">
               Start Your Project
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-4">
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mt-4 uppercase">
               Connect With Our Engineering Team
             </h2>
             <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
-            <p className="mt-4 text-sm text-brand-light font-medium">
+            <p className="mt-4 text-sm text-slate-600 font-medium">
               Have specific engineering requirements or need assistance with loop design? Speak directly to our high-purity water process engineers.
             </p>
           </div>
@@ -380,10 +380,10 @@ export default function Home() {
             {/* Contact Details Panel */}
             <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
               <div className="space-y-6">
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="text-lg font-bold text-slate-900">
                   Corporate Office & Support
                 </h3>
-                <p className="text-xs text-brand-light leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   We look forward to helping you design a compliant, robust, and low-lifecycle-cost pure water setup. Feel free to visit or drop us a line.
                 </p>
 
@@ -394,8 +394,8 @@ export default function Home() {
                       <MapPin className="w-5 h-5 text-brand-cyan" />
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase font-bold text-brand-light">Corporate Office</span>
-                      <span className="text-xs font-bold text-white leading-relaxed">
+                      <span className="block text-[10px] uppercase font-bold text-slate-500">Corporate Office</span>
+                      <span className="text-xs font-bold text-slate-900 leading-relaxed">
                         Plot No. 189, IDA Jeedimetla, Quthubullapur, Hyderabad, Telangana – 500055
                       </span>
                     </div>
@@ -407,8 +407,8 @@ export default function Home() {
                       <PhoneCall className="w-5 h-5 text-brand-cyan" />
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase font-bold text-brand-light">Direct Call</span>
-                      <a href="tel:+919985479095" className="text-xs font-bold text-white hover:text-brand-cyan transition-colors">
+                      <span className="block text-[10px] uppercase font-bold text-slate-500">Direct Call</span>
+                      <a href="tel:+919985479095" className="text-xs font-bold text-slate-900 hover:text-brand-cyan transition-colors">
                         +91 99854 79095
                       </a>
                     </div>
@@ -420,8 +420,8 @@ export default function Home() {
                       <Mail className="w-5 h-5 text-brand-cyan" />
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase font-bold text-brand-light">Email Address</span>
-                      <a href="mailto:info@ravionwater.in" className="text-xs font-bold text-white hover:text-brand-cyan transition-colors">
+                      <span className="block text-[10px] uppercase font-bold text-slate-500">Email Address</span>
+                      <a href="mailto:info@ravionwater.in" className="text-xs font-bold text-slate-900 hover:text-brand-cyan transition-colors">
                         info@ravionwater.in
                       </a>
                     </div>
@@ -433,8 +433,8 @@ export default function Home() {
                       <Clock className="w-5 h-5 text-brand-cyan" />
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase font-bold text-brand-light">Business Hours</span>
-                      <span className="text-xs font-bold text-white">
+                      <span className="block text-[10px] uppercase font-bold text-slate-500">Business Hours</span>
+                      <span className="text-xs font-bold text-slate-900">
                         Mon - Sat: 9:00 AM - 6:00 PM (IST)
                       </span>
                     </div>
@@ -458,11 +458,11 @@ export default function Home() {
 
               {/* Call-out Badge */}
               <div className="p-4 rounded-xl border border-brand-cyan/20 bg-brand-cyan/5">
-                <span className="text-xs font-semibold text-brand-sky flex items-center space-x-1.5">
+                <span className="text-xs font-bold text-brand-cyan flex items-center space-x-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping"></span>
                   <span>WhatsApp Live Support Available</span>
                 </span>
-                <p className="text-xs text-brand-light mt-1">
+                <p className="text-xs text-slate-600 mt-1">
                   For immediate escalation or site breakdowns, click the floating green chat bubble on the bottom-right.
                 </p>
               </div>
@@ -477,75 +477,75 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="p-8 rounded-3xl glass-panel border border-white/5 shadow-2xl relative"
               >
-                <h3 className="text-xl font-bold text-white mb-6">
+                <h3 className="text-xl font-bold text-slate-900 mb-6">
                   Technical Inquiry Form
                 </h3>
                 <form onSubmit={(e) => { e.preventDefault(); alert("Thank you! Your inquiry has been submitted. Our engineering team will contact you shortly."); }} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-brand-light mb-1.5">
+                      <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                         Your Name
                       </label>
                       <input
                         type="text"
                         id="name"
                         required
-                        className="w-full bg-brand-blue/30 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-brand-light focus:outline-none focus:border-brand-cyan transition-colors"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-cyan transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-brand-light mb-1.5">
+                      <label htmlFor="company" className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                         Company Name
                       </label>
                       <input
                         type="text"
                         id="company"
                         required
-                        className="w-full bg-brand-blue/30 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-brand-light focus:outline-none focus:border-brand-cyan transition-colors"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-cyan transition-colors"
                         placeholder="Pharma Industries"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-brand-light mb-1.5">
+                    <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                       Email Address
                     </label>
                     <input
                       type="email"
                       id="email"
                       required
-                      className="w-full bg-brand-blue/30 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-brand-light focus:outline-none focus:border-brand-cyan transition-colors"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-cyan transition-colors"
                       placeholder="john.doe@company.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="system" className="block text-xs font-bold uppercase tracking-wider text-brand-light mb-1.5">
+                    <label htmlFor="system" className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                       System of Interest
                     </label>
                     <select
                       id="system"
-                      className="w-full bg-brand-blue/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-cyan transition-colors cursor-pointer"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-brand-cyan transition-colors cursor-pointer"
                     >
-                      <option className="bg-brand-deep text-white" value="pw">Purified Water System (PW)</option>
-                      <option className="bg-brand-deep text-white" value="wfi">Water for Injection (WFI)</option>
-                      <option className="bg-brand-deep text-white" value="psg">Pure Steam Generator (PSG)</option>
-                      <option className="bg-brand-deep text-white" value="loop">Distribution Loops & Piping</option>
-                      <option className="bg-brand-deep text-white" value="custom">Other / Custom Inquiry</option>
+                      <option className="bg-white text-slate-900" value="pw">Purified Water System (PW)</option>
+                      <option className="bg-white text-slate-900" value="wfi">Water for Injection (WFI)</option>
+                      <option className="bg-white text-slate-900" value="psg">Pure Steam Generator (PSG)</option>
+                      <option className="bg-white text-slate-900" value="loop">Distribution Loops & Piping</option>
+                      <option className="bg-white text-slate-900" value="custom">Other / Custom Inquiry</option>
                     </select>
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-brand-light mb-1.5">
+                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">
                       Project Requirements
                     </label>
                     <textarea
                       id="message"
                       rows={4}
                       required
-                      className="w-full bg-brand-blue/30 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-brand-light focus:outline-none focus:border-brand-cyan transition-colors resize-none"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-cyan transition-colors resize-none"
                       placeholder="Detail flow rates, site location, design standards, or quality requirements..."
                     ></textarea>
                   </div>

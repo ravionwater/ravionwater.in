@@ -127,7 +127,7 @@ export default function ShowcaseCarousel() {
     if (isPlaying) {
       timerRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-      }, 2000); // 2 seconds delay
+      }, 3000); // 3 seconds delay
     }
 
     return () => {
@@ -163,7 +163,7 @@ export default function ShowcaseCarousel() {
           </h2>
           <div className="w-16 h-1 bg-brand-cyan mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-base text-brand-light font-medium">
-            Browse our full range of high-purity water generation skids, distribution loops, and automation interfaces. Slides auto-rotate every 2 seconds. Hover to pause.
+            Browse our full range of high-purity water generation skids, distribution loops, and automation interfaces. Slides auto-rotate every 3 seconds. Hover to pause.
           </p>
         </div>
 

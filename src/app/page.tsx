@@ -43,9 +43,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             {/* Left Hero Card (takes 9 columns on desktop) */}
             <div className="lg:col-span-9 relative rounded-3xl overflow-hidden shadow-xl min-h-[480px] lg:min-h-[600px] flex items-center bg-slate-100">
-              {/* Background Image of Lab Researcher */}
+              {/* Background Image of Water System */}
               <Image
-                src="/images/gallery_3.png"
+                src="/images/hero_water_system.png"
                 alt="Ravion Water Tech High-Purity Engineering India"
                 fill
                 priority

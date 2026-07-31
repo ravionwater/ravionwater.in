@@ -216,7 +216,7 @@ export default function Home() {
             className="mt-16 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl glass-panel border border-slate-200/80 shadow-lg bg-slate-50"
           >
             {[
-              { val: "150+", label: "Systems Commissioned" },
+              { val: "20+", label: "Experience" },
               { val: "SS 316L", label: "ASME BPE Materials" },
               { val: "0%", label: "Contamination Events" },
               { val: "24/7", label: "Operational Support" }

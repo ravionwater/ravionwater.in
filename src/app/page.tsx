@@ -79,7 +79,7 @@ export default function Home() {
                 </h1>
 
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-semibold mb-6">
-                  Engineering FDA USP compliant, fully validated Purified Water (PW) Systems, Water for Injection (WFI) Plants, and Pure Steam Generators (PSG) for pharmaceutical hubs in Hyderabad, Telangana, and across India.
+                  Engineering FDA USP compliant, fully validated Purified Water Systems, Water for Injection Plants, and Pure Steam Generators for pharmaceutical hubs in Hyderabad, Telangana, and across India.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -216,10 +216,10 @@ export default function Home() {
             className="mt-16 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl glass-panel border border-slate-200/80 shadow-lg bg-slate-50"
           >
             {[
-              { val: "20+", label: "Experience" },
-              { val: "SS 316L", label: "ASME BPE Materials" },
-              { val: "0%", label: "Contamination Events" },
-              { val: "24/7", label: "Operational Support" }
+              { val: "20+ years", label: "INDUSTRY EXPERIENCE" },
+              { val: "SS 316L", label: "ASME BPE MATERIALS" },
+              { val: "GMP / USP", label: "COMPLIANCE" },
+              { val: "360° SUPPORT", label: "SYSTEMS • SPARES • SERVICES" }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">

@@ -216,7 +216,7 @@ export default function Home() {
             className="mt-16 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 p-6 sm:p-8 rounded-2xl glass-panel border border-slate-200/80 shadow-lg bg-slate-50"
           >
             {[
-              { val: "20+ years", label: "INDUSTRY EXPERIENCE" },
+              { val: "20+ YEARS", label: "INDUSTRY EXPERIENCE" },
               { val: "SS 316L", label: "ASME BPE MATERIALS" },
               { val: "GMP / USP", label: "COMPLIANCE" },
               { val: "360° SUPPORT", label: "SYSTEMS • SPARES • SERVICES" }

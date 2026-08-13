@@ -45,7 +45,7 @@ export default function Header() {
           <Link href="/" className="flex items-center group hover:scale-[1.02] transition-transform duration-300 flex-shrink-0">
             <div className="relative w-40 h-12 md:w-52 md:h-16 flex items-center justify-start overflow-hidden">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.jpg"
                 alt="Ravion Water Tech Logo"
                 fill
                 priority

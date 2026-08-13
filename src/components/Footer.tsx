@@ -19,7 +19,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center group hover:scale-[1.01] transition-transform duration-300">
               <div className="relative w-36 h-10 bg-white rounded-xl px-2 shadow-md shadow-black/5 flex items-center justify-center overflow-hidden border border-slate-200">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.jpg"
                   alt="Ravion Water Tech Logo"
                   width={130}
                   height={32}

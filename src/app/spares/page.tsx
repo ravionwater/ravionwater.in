@@ -31,8 +31,8 @@ export default function SparesPage() {
         "ASME BPE dimensions and tolerance standards"
       ],
       specs: ["SS 316L EP", "ASME BPE compliant", "Ra < 0.4 µm"],
-      image: "/images/spares1.png",
-      category: "Piping"
+      image: "/images/Sanitary Pipes & Fittings.png",
+      category: "Sanitary Piping"
     },
     {
       id: 2,
@@ -44,8 +44,8 @@ export default function SparesPage() {
         "Actuation: manual handwheel or pneumatic actuator"
       ],
       specs: ["FDA USP class VI", "Zero Dead-Leg", "CIP/SIP Rated"],
-      image: "/images/diaphragm_valve.png",
-      category: "Valves"
+      image: "/images/Diaphragm Valves.png",
+      category: "Daiphragm Valves"
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ export default function SparesPage() {
       ],
       specs: ["SS 316L MOC", "Cavity Filled", "Tri-Clamp Ends"],
       image: "/images/ball_valve.png",
-      category: "Valves"
+      category: "Ball Valves"
     },
     {
       id: 4,
@@ -83,7 +83,7 @@ export default function SparesPage() {
         "Variable frequency drive (VFD) compatibility for loop velocity control"
       ],
       specs: ["SS 316L impeller", "VFD compatible", "Hygienic Seals"],
-      image: "/images/spares2.png",
+      image: "/images/Pumps.png",
       category: "Pumps"
     },
     {
@@ -97,7 +97,7 @@ export default function SparesPage() {
       ],
       specs: ["RO Membranes", "EDI cells", "Hot-Water Sanitizable"],
       image: "/images/membranes_edi.png",
-      category: "Filtration"
+      category: "EDI"
     },
     {
       id: 7,
@@ -109,7 +109,7 @@ export default function SparesPage() {
         "Steam-sterilizable filter elements for absolute retention"
       ],
       specs: ["0.22 µm absolute", "Hydrophobic Vent", "Integrity Testable"],
-      image: "/images/spares2.png",
+      image: "/images/Filters & Cartridges.png",
       category: "Filtration"
     },
     {
@@ -122,8 +122,8 @@ export default function SparesPage() {
         "Industrial UPVC ball valves and butterfly valves"
       ],
       specs: ["Sch 80 UPVC", "Chemical Resistant", "Pretreatment Use"],
-      image: "/images/spares2.png",
-      category: "Piping"
+      image: "/images/UPVC Pipes Fittings.png",
+      category: "UPVC Piping"
     },
     {
       id: 9,
@@ -135,7 +135,7 @@ export default function SparesPage() {
         "Compatible with multiport auto-regeneration control heads"
       ],
       specs: ["FRP Shell", "Corrosion Proof", "Max 10 bar rated"],
-      image: "/images/spares2.png",
+      image: "/images/FRP Vessels.png",
       category: "Pretreatment"
     },
     {
@@ -148,7 +148,7 @@ export default function SparesPage() {
         "Online TOC analyzers complying with USP 643 regulations"
       ],
       specs: ["TOC Analyser", "Conductivity cell", "USP 643/645 Compliant"],
-      image: "/images/spares1.png",
+      image: "/images/Sensor.jpg",
       category: "Instruments"
     }
   ];

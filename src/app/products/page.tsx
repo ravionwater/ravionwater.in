@@ -23,7 +23,7 @@ export default function ProductsPage() {
   const products: ProductItem[] = [
     {
       id: 1,
-      name: "Purified Water (PW) Generation",
+      name: "Purified Water Generation Systems",
       desc: "FDA-compliant RO + EDI modular skids featuring chemical-free continuous demineralization and fully automated thermal sanitization loops.",
       features: [
         "Double-pass Reverse Osmosis with EDI configuration",
@@ -31,8 +31,8 @@ export default function ProductsPage() {
         "Chemical-free hot water sanitization (up to 85°C)"
       ],
       specs: ["USP/EP PW Quality", "TOC < 500 ppb", "Conductivity < 1.3 µS/cm"],
-      image: "/images/pw_system.png",
-      category: "PW Systems"
+      image: "/images/PW Generation System.jpeg",
+      category: "PWG Systems"
     },
     {
       id: 2,
@@ -44,8 +44,8 @@ export default function ProductsPage() {
         "Ozone sanitization with online TOC/O3 monitoring"
       ],
       specs: ["Zero Dead-Legs", "Continuous UV Dosing", "ASME BPE Standard"],
-      image: "/images/loop.png",
-      category: "Distribution"
+      image: "/images/PW Distribution.jpg",
+      category: "PW Distribution"
     },
     {
       id: 3,
@@ -70,8 +70,8 @@ export default function ProductsPage() {
         "Sub-cooled loop configuration for points-of-use"
       ],
       specs: ["SS 316L EP Finish", "ASME IX Welded", "Full Borescope Logs"],
-      image: "/images/system1.jpg",
-      category: "Distribution"
+      image: "/images/WFI Distribution.JPG",
+      category: "WFI Distribution"
     },
     {
       id: 5,
@@ -109,7 +109,7 @@ export default function ProductsPage() {
         "Automated backwash and regeneration cycles"
       ],
       specs: ["Raw Water Treatment", "FRP/SS Vessels", "Auto-Control Valves"],
-      image: "/images/PWG.jpg",
+      image: "/images/Pretreatment Systems.JPG",
       category: "Pretreatment"
     },
     {
@@ -122,8 +122,8 @@ export default function ProductsPage() {
         "PLC control with validation log printouts"
       ],
       specs: ["Mobile/Stationary", "Double Tube-Sheet", "Sanitary Pumps"],
-      image: "/images/project.png",
-      category: "PW Systems"
+      image: "/images/CIP SIP Systems.jpg",
+      category: "CIP/SIP Systems"
     },
     {
       id: 9,

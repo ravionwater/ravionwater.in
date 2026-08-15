@@ -58,7 +58,7 @@ export default function ProductsPage() {
       ],
       specs: ["USP/EP WFI Quality", "Endotoxin < 0.25 EU/ml", "Conductivity < 1.1 µS/cm"],
       image: "/images/wfi_system.png",
-      category: "WFI Systems"
+      category: "MCDP"
     },
     {
       id: 4,
@@ -84,7 +84,7 @@ export default function ProductsPage() {
       ],
       specs: ["EN 285 Compliant", "Dryness Fraction > 0.9", "Sterile & Pyrogen-Free"],
       image: "/images/psg_system.png",
-      category: "Pure Steam"
+      category: "PSG"
     },
     {
       id: 6,
@@ -127,7 +127,7 @@ export default function ProductsPage() {
     },
     {
       id: 9,
-      name: "All Types of SS Vessels",
+      name: "Process Vessels",
       desc: "Custom storage vessels, mixing tanks, and pressure reactors designed and fabricated under sterile standards.",
       features: [
         "Jacketed and insulated vessels with cladding",
@@ -136,7 +136,7 @@ export default function ProductsPage() {
       ],
       specs: ["SS 316L electropolished", "Ra < 0.4 µm finish", "ASME VIII Standard"],
       image: "/images/sd.jpg",
-      category: "PW Systems"
+      category: "Process Vessels"
     }
   ];
 

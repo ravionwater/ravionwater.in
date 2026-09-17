@@ -28,6 +28,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://ravionwater.in",
   },
+    // Favicon
+  icons: {
+    icon: "/favicon.ico",
+  },
+
+  // Google Search Console verification
+  verification: {
+    google: "d99qIEK7FRoKTxXZQ1CnU45uxBdNN-Midq31OuyIr5o",
+  },
+};
 };
 
 export default function RootLayout({
